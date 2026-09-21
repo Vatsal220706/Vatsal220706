@@ -1,25 +1,135 @@
-<h1 align="center">Hi 👋, I'm Vatsal Jaroli</h1>
-<h3 align="center">A passionate frontend developer from India</h3>
+# 👋 Hi, I'm Vatsal Jaroli
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=vatsal2207&label=Profile%20views&color=0e75b6&style=flat" alt="vatsal2207" /> </p>
+### 💻 Frontend Engineer | 🎓 B.Tech CSE Student | 🤖 AI/ML Enthusiast
 
-- 🔭 I’m currently working on **Spandan (Open Source Project)**
+I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend Engineer** passionate about building practical, user-focused applications and continuously improving my problem-solving skills.
 
-- 🌱 I’m currently learning **DSA, Web Development, AI/ML**
+🔭 Currently working on **Spandan**, an **open-source project by IIT Ropar**.
 
-- 📫 How to reach me **jaroli22vatsal@gmail.com**
+🌱 Currently learning **DSA, Web Development, and AI/ML**.
 
-<h3 align="left">Connect with me:</h3>
+---
+
+## 🚀 Currently Working On
+
+* 🔭 **Spandan** — Open-source project by **IIT Ropar**
+* 🧠 Data Structures & Algorithms
+* 🌐 Web Development
+* 🤖 Artificial Intelligence & Machine Learning
+* 💡 Problem Solving & Software Development
+
+---
+
+# 🛠️ Tech Stack
+
+## 💻 Programming Languages
+
 <p align="left">
-<a href="https://linkedin.com/in/vatsal jaroli" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="vatsal jaroli" height="30" width="40" /></a>
-<a href="https://www.leetcode.com/vatsal jaroli" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="vatsal jaroli" height="30" width="40" /></a>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="50" height="50" alt="C" style="margin-right: 50px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="50" height="50" alt="C++" style="margin-right: 50px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="50" height="50" alt="Java" style="margin-right: 50px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" height="50" alt="Python" style="margin-right: 50px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" height="50" alt="JavaScript"/>&nbsp; &nbsp;
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> </p>
+## 🎨 Frontend Development
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=vatsal2207&show_icons=true&locale=en&layout=compact" alt="vatsal2207" /></p>
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50" height="50" alt="HTML5" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="50" height="50" alt="CSS3"/>&nbsp; &nbsp;
+</p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=vatsal2207&show_icons=true&locale=en" alt="vatsal2207" /></p>
+## 🤖 AI / Machine Learning
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=vatsal2207&" alt="vatsal2207" /></p>
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="50" height="50" alt="Pandas" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://devicons.io/devicons/icons/seaborn-icon.svg" width="50" height="50" alt="Seaborn" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="50" height="50" alt="OpenCV" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" width="50" height="50" alt="Scikit-learn"/>&nbsp; &nbsp;
+</p>
+
+## 🗄️ Databases
+
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" height="50" alt="MongoDB" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="50" height="50" alt="PostgreSQL"/>&nbsp; &nbsp;
+</p>
+
+## ⚙️ Tools & Other
+
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="50" height="50" alt="Linux" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="50" height="50" alt="Git" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://devicons.io/devicons/icons/github-icon.svg" background-color=white width="50" height="50" alt="GitHub"/>&nbsp; &nbsp;
+</p>
+
+---
+
+## 📚 Currently Learning
+
+<p align="center">
+
+|      🧩 DSA     |    🌐 Web Development   |    🤖 AI / ML    | 🌍 Open Source |
+| :-------------: | :---------------------: | :--------------: | :------------: |
+| Problem Solving |   Frontend Development  | Machine Learning |  Contributions |
+|    Algorithms   | Modern Web Technologies |  Computer Vision |  Collaboration |
+
+</p>
+---
+
+## 📊 GitHub Activity
+
+<p align="center">
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Vatsal220706&theme=radical"
+    alt="Vatsal's GitHub Profile Summary"
+    width="90%"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Vatsal220706&theme=tokyonight"
+    alt="Vatsal's GitHub Stats"
+    height="180"
+  />
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Vatsal220706&theme=tokyonight&v=2"
+    alt="Vatsal's Top Languages by Repository"
+    height="180"
+  />
+</p>
+
+</p>
+
+
+---
+<h2 align="center"> 🌐 Connect With Me</h2>
+<!-- ## 🌐 Connect With Me -->
+
+<p align="center">
+
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jaroli22vatsal@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
+  </a>
+  &nbsp;
+  
+  <a href="https://www.linkedin.com/in/vatsal-jaroli-b268373ab/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  &nbsp;
+  
+  <a href="https://github.com/Vatsal220706">
+    <img src="https://img.shields.io/badge/GitHub-FFFFFF?style=for-the-badge&logo=github&logoColor=181717" alt="GitHub"/>
+  </a>
+</p>
+
+---
+
+<p align="center">
+  💡 <i>Always learning. Always building. Always improving.</i>
+</p>
+
+<p align="center">
+  ⭐ Thanks for visiting my profile!
+</p>
