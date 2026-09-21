@@ -25,42 +25,42 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
 ## 💻 Programming Languages
 
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="50" height="50" alt="C" style="margin-right: 50px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="50" height="50" alt="C++" style="margin-right: 50px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="50" height="50" alt="Java" style="margin-right: 50px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" height="50" alt="Python" style="margin-right: 50px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" height="50" alt="JavaScript"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" height="40" alt="C" style="margin-right: 50px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" height="40" alt="C++" style="margin-right: 50px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" alt="Java" style="margin-right: 50px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" height="40" alt="Python" style="margin-right: 50px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="JavaScript"/>&nbsp; &nbsp;
 </p>
 
 ## 🎨 Frontend Development
 
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50" height="50" alt="HTML5" style="margin-right: 30px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="50" height="50" alt="CSS3"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="HTML5" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" alt="CSS3"/>&nbsp; &nbsp;
 </p>
 
 ## 🤖 AI / Machine Learning
 
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="50" height="50" alt="Pandas" style="margin-right: 30px;"/>&nbsp; &nbsp;
-  <img src="https://devicons.io/devicons/icons/seaborn-icon.svg" width="50" height="50" alt="Seaborn" style="margin-right: 30px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="50" height="50" alt="OpenCV" style="margin-right: 30px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" width="50" height="50" alt="Scikit-learn"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="40" height="40" alt="Pandas" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://devicons.io/devicons/icons/seaborn-icon.svg" width="40" height="40" alt="Seaborn" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="40" height="40" alt="OpenCV" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" width="40" height="40" alt="Scikit-learn"/>&nbsp; &nbsp;
 </p>
 
 ## 🗄️ Databases
 
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" height="50" alt="MongoDB" style="margin-right: 30px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="50" height="50" alt="PostgreSQL"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="MongoDB" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" height="40" alt="PostgreSQL"/>&nbsp; &nbsp;
 </p>
 
 ## ⚙️ Tools & Other
 
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="50" height="50" alt="Linux" style="margin-right: 30px;"/>&nbsp; &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="50" height="50" alt="Git" style="margin-right: 30px;"/>&nbsp; &nbsp;
-  <img src="https://devicons.io/devicons/icons/github-icon.svg" background-color=white width="50" height="50" alt="GitHub"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" height="40" alt="Linux" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40" alt="Git" style="margin-right: 30px;"/>&nbsp; &nbsp;
+  <img src="https://devicons.io/devicons/icons/github-icon.svg" background-color=white width="40" height="40" alt="GitHub"/>&nbsp; &nbsp;
 </p>
 
 ---
