@@ -1,14 +1,13 @@
 name: Update GitHub Stats Card
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
-
-  workflow_dispatch:
-
   push:
     branches:
       - main
+      - vatsal
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -21,111 +20,99 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate GitHub Stats Card
+      - name: Generate GitHub Stats SVG
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python <<'PY'
+          python3 <<'PY'
           import json
           import math
           import os
           import urllib.request
-          from pathlib import Path
 
           USERNAME = "Vatsal220706"
+          OUTPUT = "assets/github-stats.svg"
 
-          API = "https://api.github.com"
-
-          HEADERS = {
-              "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+          headers = {
               "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
               "X-GitHub-Api-Version": "2022-11-28"
           }
 
+          def api(url):
+              req = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(req) as response:
+                  return json.load(response)
 
-          def github_api(url):
-              request = urllib.request.Request(
-                  url,
-                  headers=HEADERS
-              )
+          # -----------------------------
+          # GET USER INFORMATION
+          # -----------------------------
 
-              with urllib.request.urlopen(request) as response:
-                  return json.loads(response.read())
-
-
-          # -------------------------------------------------
-          # 1. USER / REPOSITORY DATA
-          # -------------------------------------------------
-
-          user = github_api(
-              f"{API}/users/{USERNAME}"
-          )
+          user = api(f"https://api.github.com/users/{USERNAME}")
 
           repositories = user["public_repos"]
 
+          # -----------------------------
+          # GET ALL PUBLIC REPOSITORIES
+          # -----------------------------
 
-          # -------------------------------------------------
-          # 2. COMMITS
-          # -------------------------------------------------
-
-          commit_data = github_api(
-              f"{API}/search/commits?q=author:{USERNAME}"
-          )
-
-          commits = commit_data["total_count"]
-
-
-          # -------------------------------------------------
-          # 3. PULL REQUESTS
-          # -------------------------------------------------
-
-          pr_data = github_api(
-              f"{API}/search/issues?q=author:{USERNAME}+type:pr"
-          )
-
-          pull_requests = pr_data["total_count"]
-
-
-          # -------------------------------------------------
-          # 4. ISSUES
-          # -------------------------------------------------
-
-          issue_data = github_api(
-              f"{API}/search/issues?q=author:{USERNAME}+type:issue"
-          )
-
-          issues = issue_data["total_count"]
-
-
-          # -------------------------------------------------
-          # 5. STARS
-          # -------------------------------------------------
-
-          stars = 0
+          repos = []
           page = 1
 
           while True:
-
-              repos = github_api(
-                  f"{API}/users/{USERNAME}/repos"
-                  f"?per_page=100&page={page}"
+              data = api(
+                  f"https://api.github.com/users/{USERNAME}/repos"
+                  f"?per_page=100&page={page}&type=owner"
               )
 
-              if not repos:
+              if not data:
                   break
 
-              for repo in repos:
-                  stars += repo["stargazers_count"]
+              repos.extend(data)
 
-              if len(repos) < 100:
+              if len(data) < 100:
                   break
 
               page += 1
 
+          stars = sum(repo["stargazers_count"] for repo in repos)
 
-          # -------------------------------------------------
-          # VALUES
-          # -------------------------------------------------
+          # -----------------------------
+          # PULL REQUESTS
+          # -----------------------------
+
+          pr_data = api(
+              f"https://api.github.com/search/issues"
+              f"?q=author:{USERNAME}+type:pr"
+          )
+
+          pull_requests = pr_data["total_count"]
+
+          # -----------------------------
+          # ISSUES
+          # -----------------------------
+
+          issue_data = api(
+              f"https://api.github.com/search/issues"
+              f"?q=author:{USERNAME}+type:issue"
+          )
+
+          issues = issue_data["total_count"]
+
+          # -----------------------------
+          # COMMITS
+          # -----------------------------
+
+          commit_data = api(
+              f"https://api.github.com/search/commits"
+              f"?q=author:{USERNAME}"
+          )
+
+          commits = commit_data["total_count"]
+
+          # -----------------------------
+          # STATISTICS
+          # -----------------------------
 
           values = [
               commits,
@@ -135,25 +122,13 @@ jobs:
               repositories
           ]
 
-          total = sum(values)
-
-          # Avoid division by zero
-          if total == 0:
-              total = 1
-
-
-          # -------------------------------------------------
-          # COLORS
-          # -------------------------------------------------
-
           colors = [
-              "#3B82F6",  # Blue - Commits
-              "#8B5CF6",  # Purple - Pull Requests
-              "#22C55E",  # Green - Issues
-              "#F59E0B",  # Orange - Stars
-              "#EC4899"   # Pink - Repositories
+              "#3B82F6",
+              "#8B5CF6",
+              "#22C55E",
+              "#F59E0B",
+              "#EC4899"
           ]
-
 
           labels = [
               "Commits",
@@ -163,112 +138,99 @@ jobs:
               "Repositories"
           ]
 
+          total = sum(values)
 
-          # -------------------------------------------------
-          # DONUT CALCULATION
-          # -------------------------------------------------
+          # Prevent division by zero
+          if total == 0:
+              total = 1
+
+          # -----------------------------
+          # DONUT SETTINGS
+          # -----------------------------
 
           cx = 145
           cy = 150
           radius = 92
-          inner_radius = 60
 
           circumference = 2 * math.pi * radius
 
-          offset = 0
+          circles = []
 
-          donut_segments = []
+          offset = 0
 
           for value, color in zip(values, colors):
 
-              percentage = value / total
+              length = circumference * value / total
 
-              dash = percentage * circumference
+              circles.append(f"""
+              <circle
+                  cx="{cx}"
+                  cy="{cy}"
+                  r="{radius}"
+                  fill="none"
+                  stroke="{color}"
+                  stroke-width="25"
+                  stroke-dasharray="{length:.2f} {circumference:.2f}"
+                  stroke-dashoffset="-{offset:.2f}"
+                  transform="rotate(-90 {cx} {cy})"
+              />
+              """)
 
-              donut_segments.append(
-                  f'''
-                  <circle
-                      cx="{cx}"
-                      cy="{cy}"
-                      r="{radius}"
-                      fill="none"
-                      stroke="{color}"
-                      stroke-width="25"
-                      stroke-dasharray="{dash:.2f} {circumference:.2f}"
-                      stroke-dashoffset="-{offset:.2f}"
-                      transform="rotate(-90 {cx} {cy})"
-                  />
-                  '''
-              )
+              offset += length
 
-              offset += dash
+          donut = "".join(circles)
 
-
-          donut = "\n".join(donut_segments)
-
-
-          # -------------------------------------------------
+          # -----------------------------
           # LEGEND
-          # -------------------------------------------------
+          # -----------------------------
 
-          legend = []
+          legend = ""
 
-          start_y = 75
-          gap = 40
+          y_positions = [70, 110, 150, 190, 230]
 
-          for i, (label, value, color) in enumerate(
-              zip(labels, values, colors)
+          for label, value, color, y in zip(
+              labels,
+              values,
+              colors,
+              y_positions
           ):
 
-              y = start_y + i * gap
+              legend += f"""
+              <circle
+                  cx="355"
+                  cy="{y}"
+                  r="6"
+                  fill="{color}"
+              />
 
-              # IMPORTANT:
-              # Repositories uses a plain SVG circle.
-              # No emoji / heart is used.
+              <text
+                  x="375"
+                  y="{y + 5}"
+                  font-family="Arial, Helvetica, sans-serif"
+                  font-size="15"
+                  fill="#C9D1D9"
+              >
+                  {label}
+              </text>
 
-              legend.append(
-                  f'''
-                  <circle
-                      cx="355"
-                      cy="{y - 5}"
-                      r="6"
-                      fill="{color}"
-                  />
+              <text
+                  x="640"
+                  y="{y + 5}"
+                  text-anchor="end"
+                  font-family="Arial, Helvetica, sans-serif"
+                  font-size="15"
+                  font-weight="bold"
+                  fill="#FFFFFF"
+              >
+                  {value}
+              </text>
+              """
 
-                  <text
-                      x="375"
-                      y="{y}"
-                      font-family="Arial, Helvetica, sans-serif"
-                      font-size="15"
-                      fill="#C9D1D9"
-                  >
-                      {label}
-                  </text>
-
-                  <text
-                      x="640"
-                      y="{y}"
-                      text-anchor="end"
-                      font-family="Arial, Helvetica, sans-serif"
-                      font-size="15"
-                      font-weight="bold"
-                      fill="#FFFFFF"
-                  >
-                      {value}
-                  </text>
-                  '''
-              )
-
-
-          legend_svg = "\n".join(legend)
-
-
-          # -------------------------------------------------
+          # -----------------------------
           # FINAL SVG
-          # -------------------------------------------------
+          # -----------------------------
 
-          svg = f'''
-          <svg
+          svg = f"""<svg
               width="700"
               height="320"
               viewBox="0 0 700 320"
@@ -297,7 +259,6 @@ jobs:
 
               </defs>
 
-
               <!-- CARD -->
 
               <rect
@@ -309,7 +270,6 @@ jobs:
                   fill="url(#background)"
                   stroke="#30363D"
               />
-
 
               <!-- TITLE -->
 
@@ -324,24 +284,22 @@ jobs:
                   GitHub Statistics
               </text>
 
-
               <!-- DONUT -->
 
               {donut}
 
-
               <!-- DONUT CENTER -->
 
               <circle
-                  cx="{cx}"
-                  cy="{cy}"
-                  r="{inner_radius}"
+                  cx="145"
+                  cy="150"
+                  r="60"
                   fill="#0D1117"
               />
 
               <text
-                  x="{cx}"
-                  y="{cy - 5}"
+                  x="145"
+                  y="145"
                   text-anchor="middle"
                   font-family="Arial, Helvetica, sans-serif"
                   font-size="22"
@@ -352,8 +310,8 @@ jobs:
               </text>
 
               <text
-                  x="{cx}"
-                  y="{cy + 18}"
+                  x="145"
+                  y="168"
                   text-anchor="middle"
                   font-family="Arial, Helvetica, sans-serif"
                   font-size="12"
@@ -362,11 +320,9 @@ jobs:
                   Total
               </text>
 
-
               <!-- LEGEND -->
 
-              {legend_svg}
-
+              {legend}
 
               <!-- FOOTER -->
 
@@ -377,51 +333,36 @@ jobs:
                   font-size="11"
                   fill="#6E7681"
               >
-                  @Vatsal220706
+                  @{USERNAME}
               </text>
 
           </svg>
-          '''
+          """
 
+          os.makedirs("assets", exist_ok=True)
 
-          # -------------------------------------------------
-          # SAVE
-          # -------------------------------------------------
+          with open(OUTPUT, "w", encoding="utf-8") as f:
+              f.write(svg)
 
-          output = Path("assets")
-          output.mkdir(exist_ok=True)
-
-          file = output / "github-stats.svg"
-
-          file.write_text(
-              svg.strip(),
-              encoding="utf-8"
-          )
-
-          print("===================================")
-          print("GitHub Stats Updated")
-          print("===================================")
-          print(f"Commits:        {commits}")
-          print(f"Pull Requests:  {pull_requests}")
-          print(f"Issues:         {issues}")
-          print(f"Stars:          {stars}")
-          print(f"Repositories:   {repositories}")
-          print("===================================")
-
+          print("GitHub statistics updated:")
+          print("Commits:", commits)
+          print("Pull Requests:", pull_requests)
+          print("Issues:", issues)
+          print("Stars:", stars)
+          print("Repositories:", repositories)
+          print("Total:", total)
           PY
 
-
-      - name: Commit updated card
+      - name: Commit updated statistics
         run: |
-
           git config user.name "github-actions[bot]"
-
-          git config user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add assets/github-stats.svg
 
-          git diff --cached --quiet || \
-            git commit -m "chore: update GitHub stats"
-
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to GitHub statistics."
+          else
+            git commit -m "chore: update GitHub statistics"
+            git push
+          fi
