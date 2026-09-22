@@ -1,11 +1,12 @@
 # 👋 Hi, I'm Vatsal Jaroli
 
-### 💻 Frontend Engineer | 🎓 B.Tech CSE Student | 🤖 AI/ML Enthusiast
+### 💻 Web Development — Currently Learning | 🎓 B.Tech CSE Student | 🤖 AI/ML Enthusiast
 
 <p align="center">
   <img 
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=true&width=700&lines=Learning+Frontend+Development;Open+Source+Contributor;DSA+Learner;AI%2FML+Learner"
-  />
+  src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=true&width=700&lines=Open+Source+Contributor;Web+Development+-+Currently+Learning;DSA+Learner;AI%2FML+Learner"
+  alt="Typing SVG"
+/>
 </p>
 
 I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend Engineer** passionate about building practical, user-focused applications and continuously improving my problem-solving skills.
