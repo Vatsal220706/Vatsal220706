@@ -86,7 +86,7 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
 
 <p align="center">
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Vatsal220706&theme=radical&v=2"
+    src="./assets/profile-details.svg"
     alt="Vatsal's GitHub Profile Summary"
     width="65%"
   />
@@ -103,7 +103,7 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
     alt="GitHub Statistics"
   />
   <img
-    src="https://streak-stats.demolab.com?user=Vatsal220706&theme=radical&hide_border=true"
+    src="./assets/streak-stats.svg"
     width="45%"
     alt="GitHub Streak"
   />
