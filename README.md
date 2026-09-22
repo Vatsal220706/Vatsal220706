@@ -2,6 +2,12 @@
 
 ### 💻 Frontend Engineer | 🎓 B.Tech CSE Student | 🤖 AI/ML Enthusiast
 
+<p align="center">
+  <img 
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=true&width=700&lines=Frontend+Engineer;Open+Source+Contributor;DSA+Learner;AI%2FML+Learner"
+  />
+</p>
+
 I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend Engineer** passionate about building practical, user-focused applications and continuously improving my problem-solving skills.
 
 🔭 Currently working on **Spandan**, an **open-source project by IIT Ropar**.
@@ -82,7 +88,11 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
   <img
     src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Vatsal220706&theme=radical"
     alt="Vatsal's GitHub Profile Summary"
-    width="90%"
+    width="65%"
+  />
+  <img
+    src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=Vatsal220706&layout=compact&langs_count=8&theme=transparent&hide_border=true"
+    width="30%"
   />
 </p>
 
@@ -93,8 +103,9 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
     alt="GitHub Statistics"
   />
   <img
-    src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=Vatsal220706&layout=compact&langs_count=8&theme=transparent&hide_border=true"
-    width="40%"
+    src="https://streak-stats.demolab.com?user=Vatsal220706&theme=radical&hide_border=true"
+    width="48%"
+    alt="GitHub Streak"
   />
 </p>
 
