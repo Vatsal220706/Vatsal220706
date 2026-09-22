@@ -86,7 +86,7 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
 
 <p align="center">
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Vatsal220706&theme=radical"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Vatsal220706&theme=radical&v=2"
     alt="Vatsal's GitHub Profile Summary"
     width="65%"
   />
