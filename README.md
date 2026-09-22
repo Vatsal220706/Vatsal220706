@@ -99,12 +99,12 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
 <p align="center">
   <img
     src="./assets/github-stats.svg"
-    width="450"
+    width="455"
     alt="GitHub Statistics"
   />
   <img
     src="https://streak-stats.demolab.com?user=Vatsal220706&theme=radical&hide_border=true"
-    width="48%"
+    width="45%"
     alt="GitHub Streak"
   />
 </p>
