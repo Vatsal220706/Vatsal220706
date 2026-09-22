@@ -80,26 +80,24 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
 
 <p align="center">
   <img
-    src="./assets/github-stats.svg"
-    width="700"
-    alt="GitHub Statistics"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Vatsal220706&theme=radical"
+    alt="Vatsal's GitHub Profile Summary"
+    width="90%"
   />
 </p>
 
 <p align="center">
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Vatsal220706&theme=tokyonight"
-    alt="Vatsal's GitHub Stats"
-    height="180"
+    src="./assets/github-stats.svg"
+    width="450"
+    alt="GitHub Statistics"
   />
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Vatsal220706&theme=tokyonight&v=2"
-    alt="Vatsal's Top Languages by Repository"
-    height="180"
+    src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=Vatsal220706&layout=compact&langs_count=8&theme=transparent&hide_border=true"
+    width="40%"
   />
 </p>
 
-</p>
 
 
 ---
