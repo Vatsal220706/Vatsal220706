@@ -27,7 +27,6 @@
 
     </defs>
 
-
     <!-- CARD -->
 
     <rect
@@ -39,7 +38,6 @@
         fill="url(#background)"
         stroke="#30363D"
     />
-
 
     <!-- TITLE -->
 
@@ -54,75 +52,69 @@
         GitHub Statistics
     </text>
 
-
     <!-- DONUT -->
 
     
-        <circle
-            cx="145"
-            cy="150"
-            r="92"
-            fill="none"
-            stroke="#3B82F6"
-            stroke-width="25"
-            stroke-dasharray="447.52 578.05"
-            stroke-dashoffset="-0.00"
-            transform="rotate(-90 145 150)"
-        />
-        
-
-        <circle
-            cx="145"
-            cy="150"
-            r="92"
-            fill="none"
-            stroke="#8B5CF6"
-            stroke-width="25"
-            stroke-dasharray="74.59 578.05"
-            stroke-dashoffset="-447.52"
-            transform="rotate(-90 145 150)"
-        />
-        
-
-        <circle
-            cx="145"
-            cy="150"
-            r="92"
-            fill="none"
-            stroke="#22C55E"
-            stroke-width="25"
-            stroke-dasharray="0.00 578.05"
-            stroke-dashoffset="-522.11"
-            transform="rotate(-90 145 150)"
-        />
-        
-
-        <circle
-            cx="145"
-            cy="150"
-            r="92"
-            fill="none"
-            stroke="#F59E0B"
-            stroke-width="25"
-            stroke-dasharray="0.00 578.05"
-            stroke-dashoffset="-522.11"
-            transform="rotate(-90 145 150)"
-        />
-        
-
-        <circle
-            cx="145"
-            cy="150"
-            r="92"
-            fill="none"
-            stroke="#EC4899"
-            stroke-width="25"
-            stroke-dasharray="55.94 578.05"
-            stroke-dashoffset="-522.11"
-            transform="rotate(-90 145 150)"
-        />
-        
-
+    <circle
+        cx="145"
+        cy="150"
+        r="92"
+        fill="none"
+        stroke="#3B82F6"
+        stroke-width="25"
+        stroke-dasharray="451.60 578.05"
+        stroke-dashoffset="-0.00"
+        transform="rotate(-90 145 150)"
+    />
+    
+    <circle
+        cx="145"
+        cy="150"
+        r="92"
+        fill="none"
+        stroke="#8B5CF6"
+        stroke-width="25"
+        stroke-dasharray="72.26 578.05"
+        stroke-dashoffset="-451.60"
+        transform="rotate(-90 145 150)"
+    />
+    
+    <circle
+        cx="145"
+        cy="150"
+        r="92"
+        fill="none"
+        stroke="#22C55E"
+        stroke-width="25"
+        stroke-dasharray="0.00 578.05"
+        stroke-dashoffset="-523.86"
+        transform="rotate(-90 145 150)"
+    />
+    
+    <circle
+        cx="145"
+        cy="150"
+        r="92"
+        fill="none"
+        stroke="#F59E0B"
+        stroke-width="25"
+        stroke-dasharray="0.00 578.05"
+        stroke-dashoffset="-523.86"
+        transform="rotate(-90 145 150)"
+    />
+    
+    <circle
+        cx="145"
+        cy="150"
+        r="92"
+        fill="none"
+        stroke="#EC4899"
+        stroke-width="25"
+        stroke-dasharray="54.19 578.05"
+        stroke-dashoffset="-523.86"
+        transform="rotate(-90 145 150)"
+    />
+    
 
     <!-- DONUT CENTER -->
 
@@ -142,7 +134,7 @@
         font-weight="bold"
         fill="#FFFFFF"
     >
-        31
+        32
     </text>
 
     <text
@@ -156,160 +148,154 @@
         Total
     </text>
 
-
     <!-- LEGEND -->
 
     
-        <circle
-            cx="355"
-            cy="70"
-            r="6"
-            fill="#3B82F6"
-        />
+    <circle
+        cx="355"
+        cy="70"
+        r="6"
+        fill="#3B82F6"
+    />
 
-        <text
-            x="375"
-            y="75"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            fill="#C9D1D9"
-        >
-            Commits
-        </text>
+    <text
+        x="375"
+        y="75"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        fill="#C9D1D9"
+    >
+        Commits
+    </text>
 
-        <text
-            x="640"
-            y="75"
-            text-anchor="end"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            font-weight="bold"
-            fill="#FFFFFF"
-        >
-            24
-        </text>
-        
+    <text
+        x="640"
+        y="75"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        font-weight="bold"
+        fill="#FFFFFF"
+    >
+        25
+    </text>
+    
+    <circle
+        cx="355"
+        cy="110"
+        r="6"
+        fill="#8B5CF6"
+    />
 
-        <circle
-            cx="355"
-            cy="110"
-            r="6"
-            fill="#8B5CF6"
-        />
+    <text
+        x="375"
+        y="115"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        fill="#C9D1D9"
+    >
+        Pull Requests
+    </text>
 
-        <text
-            x="375"
-            y="115"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            fill="#C9D1D9"
-        >
-            Pull Requests
-        </text>
+    <text
+        x="640"
+        y="115"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        font-weight="bold"
+        fill="#FFFFFF"
+    >
+        4
+    </text>
+    
+    <circle
+        cx="355"
+        cy="150"
+        r="6"
+        fill="#22C55E"
+    />
 
-        <text
-            x="640"
-            y="115"
-            text-anchor="end"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            font-weight="bold"
-            fill="#FFFFFF"
-        >
-            4
-        </text>
-        
+    <text
+        x="375"
+        y="155"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        fill="#C9D1D9"
+    >
+        Issues
+    </text>
 
-        <circle
-            cx="355"
-            cy="150"
-            r="6"
-            fill="#22C55E"
-        />
+    <text
+        x="640"
+        y="155"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        font-weight="bold"
+        fill="#FFFFFF"
+    >
+        0
+    </text>
+    
+    <circle
+        cx="355"
+        cy="190"
+        r="6"
+        fill="#F59E0B"
+    />
 
-        <text
-            x="375"
-            y="155"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            fill="#C9D1D9"
-        >
-            Issues
-        </text>
+    <text
+        x="375"
+        y="195"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        fill="#C9D1D9"
+    >
+        Stars
+    </text>
 
-        <text
-            x="640"
-            y="155"
-            text-anchor="end"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            font-weight="bold"
-            fill="#FFFFFF"
-        >
-            0
-        </text>
-        
+    <text
+        x="640"
+        y="195"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        font-weight="bold"
+        fill="#FFFFFF"
+    >
+        0
+    </text>
+    
+    <circle
+        cx="355"
+        cy="230"
+        r="6"
+        fill="#EC4899"
+    />
 
-        <circle
-            cx="355"
-            cy="190"
-            r="6"
-            fill="#F59E0B"
-        />
+    <text
+        x="375"
+        y="235"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        fill="#C9D1D9"
+    >
+        Repositories
+    </text>
 
-        <text
-            x="375"
-            y="195"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            fill="#C9D1D9"
-        >
-            Stars
-        </text>
-
-        <text
-            x="640"
-            y="195"
-            text-anchor="end"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            font-weight="bold"
-            fill="#FFFFFF"
-        >
-            0
-        </text>
-        
-
-        <circle
-            cx="355"
-            cy="230"
-            r="6"
-            fill="#EC4899"
-        />
-
-        <text
-            x="375"
-            y="235"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            fill="#C9D1D9"
-        >
-            Repositories
-        </text>
-
-        <text
-            x="640"
-            y="235"
-            text-anchor="end"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="15"
-            font-weight="bold"
-            fill="#FFFFFF"
-        >
-            3
-        </text>
-        
-
+    <text
+        x="640"
+        y="235"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15"
+        font-weight="bold"
+        fill="#FFFFFF"
+    >
+        3
+    </text>
+    
 
     <!-- FOOTER -->
 
