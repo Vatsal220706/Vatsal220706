@@ -76,14 +76,13 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
 
 </p>
 ---
-
-## 📊 GitHub Activity
+<h2 align="center">📊 GitHub Statistics</h2>
 
 <p align="center">
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Vatsal220706&theme=radical"
-    alt="Vatsal's GitHub Profile Summary"
-    width="90%"
+    src="./assets/github-stats.svg"
+    width="700"
+    alt="GitHub Statistics"
   />
 </p>
 
