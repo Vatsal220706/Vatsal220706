@@ -62,7 +62,7 @@
         fill="none"
         stroke="#3B82F6"
         stroke-width="25"
-        stroke-dasharray="486.09 578.05"
+        stroke-dasharray="488.13 578.05"
         stroke-dashoffset="-0.00"
         transform="rotate(-90 145 150)"
     />
@@ -74,8 +74,8 @@
         fill="none"
         stroke="#8B5CF6"
         stroke-width="25"
-        stroke-dasharray="52.55 578.05"
-        stroke-dashoffset="-486.09"
+        stroke-dasharray="51.38 578.05"
+        stroke-dashoffset="-488.13"
         transform="rotate(-90 145 150)"
     />
     
@@ -87,7 +87,7 @@
         stroke="#22C55E"
         stroke-width="25"
         stroke-dasharray="0.00 578.05"
-        stroke-dashoffset="-538.64"
+        stroke-dashoffset="-539.52"
         transform="rotate(-90 145 150)"
     />
     
@@ -99,7 +99,7 @@
         stroke="#F59E0B"
         stroke-width="25"
         stroke-dasharray="0.00 578.05"
-        stroke-dashoffset="-538.64"
+        stroke-dashoffset="-539.52"
         transform="rotate(-90 145 150)"
     />
     
@@ -110,8 +110,8 @@
         fill="none"
         stroke="#EC4899"
         stroke-width="25"
-        stroke-dasharray="39.41 578.05"
-        stroke-dashoffset="-538.64"
+        stroke-dasharray="38.54 578.05"
+        stroke-dashoffset="-539.52"
         transform="rotate(-90 145 150)"
     />
     
@@ -134,7 +134,7 @@
         font-weight="bold"
         fill="#FFFFFF"
     >
-        44
+        45
     </text>
 
     <text
@@ -177,7 +177,7 @@
         font-weight="bold"
         fill="#FFFFFF"
     >
-        37
+        38
     </text>
     
     <circle
