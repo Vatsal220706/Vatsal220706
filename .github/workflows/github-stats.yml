@@ -169,7 +169,8 @@ jobs:
 
           gql_result = graphql(gql_query)
           calendar = gql_result["data"]["user"]["contributionsCollection"]["contributionCalendar"]
-          total_contributions = calendar["totalContributions"]
+          # Use a consistent total across all cards (sum of all public activities)
+          total_contributions = commits + pull_requests + issues + stars + repositories
 
           # Flatten all contribution days
           all_days = []
@@ -302,7 +303,7 @@ jobs:
               "Repositories"
           ]
 
-          total = sum(values)
+          total = total_contributions
 
           # Prevent division by zero
           if total == 0:
