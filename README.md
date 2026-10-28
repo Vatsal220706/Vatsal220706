@@ -92,7 +92,7 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
     width="65%"
   />
   <img
-    src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=Vatsal220706&layout=compact&langs_count=8&theme=transparent&hide_border=true"
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vatsal220706&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"
     width="30%"
   />
 </p>
