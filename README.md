@@ -1,4 +1,4 @@
-# 👋 Hi, I'm Vatsal Jaroli
+﻿# 👋 Hi, I'm Vatsal Jaroli
 
 ### 💻 Web Development — Currently Learning | 🎓 B.Tech CSE Student | 🤖 AI/ML Enthusiast
 
@@ -92,7 +92,8 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
     width="65%"
   />
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vatsal220706&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"
+    src="./assets/top-langs.svg"
+    alt="Most Used Languages"
     width="30%"
   />
 </p>

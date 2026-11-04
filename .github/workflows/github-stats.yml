@@ -1,4 +1,4 @@
-name: Update GitHub Stats Card
+﻿name: Update GitHub Stats Card
 
 on:
   push:
@@ -35,6 +35,7 @@ jobs:
           OUTPUT_STATS = "assets/github-stats.svg"
           OUTPUT_PROFILE = "assets/profile-details.svg"
           OUTPUT_STREAK = "assets/streak-stats.svg"
+          OUTPUT_LANGS = "assets/top-langs.svg"
 
           headers = {
               "Accept": "application/vnd.github+json",
@@ -761,12 +762,105 @@ jobs:
           print("Longest Streak:", longest_streak)
           PY
 
+      - name: Generate Top Languages SVG
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 << 'PY2'
+          import json, os, urllib.request
+
+          USERNAME = "Vatsal220706"
+          OUTPUT_LANGS = "assets/top-langs.svg"
+
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+              "X-GitHub-Api-Version": "2022-11-28"
+          }
+
+          def api(url):
+              req = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(req) as r:
+                  return json.load(r)
+
+          repos = []
+          page = 1
+          while True:
+              data = api(f"https://api.github.com/users/{USERNAME}/repos?per_page=100&page={page}&type=owner")
+              if not data:
+                  break
+              repos.extend(data)
+              if len(data) < 100:
+                  break
+              page += 1
+
+          lang_bytes = {}
+          for repo in repos:
+              try:
+                  ld = api(f"https://api.github.com/repos/{USERNAME}/{repo['name']}/languages")
+                  for lang, b in ld.items():
+                      lang_bytes[lang] = lang_bytes.get(lang, 0) + b
+              except Exception:
+                  pass
+
+          sorted_langs = sorted(lang_bytes.items(), key=lambda x: x[1], reverse=True)[:8]
+          total_bytes = sum(b for _, b in sorted_langs) or 1
+
+          lang_colors = {
+              "Python":"#3572A5","JavaScript":"#f1e05a","TypeScript":"#2b7489",
+              "Java":"#b07219","C":"#555555","C++":"#f34b7d","C#":"#178600",
+              "Go":"#00ADD8","Rust":"#dea584","Ruby":"#701516","PHP":"#4F5D95",
+              "Swift":"#F05138","Kotlin":"#A97BFF","Dart":"#00B4AB",
+              "HTML":"#e34c26","CSS":"#563d7c","Shell":"#89e051",
+              "Dockerfile":"#384d54","Jupyter Notebook":"#DA5B0B",
+              "SCSS":"#c6538c","Vue":"#41b883","Svelte":"#ff3e00",
+          }
+          def_colors = ["#8B5CF6","#EC4899","#F59E0B","#10B981","#3B82F6","#EF4444","#14B8A6","#F97316"]
+
+          card_w = 300
+          card_h = 60 + len(sorted_langs) * 28 + 30
+          bar_w = 260
+          bar_x = 20
+
+          bar_segs = ""
+          off = 0
+          for i, (lang, bc) in enumerate(sorted_langs):
+              pct = bc / total_bytes
+              sw = round(pct * bar_w, 2)
+              col = lang_colors.get(lang, def_colors[i % len(def_colors)])
+              bar_segs += f'<rect x="{bar_x + off:.2f}" y="50" width="{sw}" height="10" fill="{col}"/>'
+              off += sw
+
+          legend = ""
+          for i, (lang, bc) in enumerate(sorted_langs):
+              pct = bc / total_bytes * 100
+              col = lang_colors.get(lang, def_colors[i % len(def_colors)])
+              y = 80 + i * 28
+              legend += (
+                  f'<circle cx="{bar_x+6}" cy="{y+6}" r="6" fill="{col}"/>'
+                  f'<text x="{bar_x+18}" y="{y+11}" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="#EDEDED">{lang}</text>'
+                  f'<text x="{card_w-10}" y="{y+11}" text-anchor="end" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="#A0A0A0">{pct:.1f}%</text>'
+              )
+
+          svg = (
+              f'<svg xmlns="http://www.w3.org/2000/svg" width="{card_w}" height="{card_h}" viewBox="0 0 {card_w} {card_h}">'
+              f'<rect width="{card_w}" height="{card_h}" rx="12" ry="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>'
+              f'<text x="20" y="30" font-family="Segoe UI,Ubuntu,sans-serif" font-size="16" font-weight="700" fill="#EDEDED">Most Used Languages</text>'
+              f'{bar_segs}{legend}</svg>'
+          )
+
+          os.makedirs("assets", exist_ok=True)
+          with open(OUTPUT_LANGS, "w", encoding="utf-8") as f:
+              f.write(svg)
+
+          print("Top languages:", [l for l, _ in sorted_langs])
+          PY2
       - name: Commit updated statistics
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/github-stats.svg assets/profile-details.svg assets/streak-stats.svg
+          git add assets/github-stats.svg assets/profile-details.svg assets/streak-stats.svg assets/top-langs.svg
 
           if git diff --cached --quiet; then
             echo "No changes to GitHub statistics."
