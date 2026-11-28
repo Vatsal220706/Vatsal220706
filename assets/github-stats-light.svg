@@ -25,17 +25,30 @@
             />
         </linearGradient>
 
-        <linearGradient
-            id="border-grad"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-        >
-            <stop offset="0%" stop-color="#38BDF8" />
-            <stop offset="50%" stop-color="#3B82F6" />
-            <stop offset="100%" stop-color="#1D4ED8" />
-        </linearGradient>
+        <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#38BDF8"/>
+        <stop offset="50%" stop-color="#3B82F6"/>
+        <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="edge-top" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edge-bottom" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edge-left" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edge-right" x1="100%" y1="0%" x2="0%" y2="0%">
+        <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="card-clip">
+        <rect x="1.5" y="1.5" width="497" height="227" rx="14" ry="14"/>
+    </clipPath>
 
     </defs>
 
@@ -49,11 +62,13 @@
         rx="14"
         fill="url(#background)"
     />
-    <rect x="1.5" y="1.5" width="497.0" height="227.0" rx="14.0" ry="14.0" fill="none" stroke="url(#border-grad)" stroke-width="3.0" stroke-opacity="1.0"/>
-              <rect x="4.0" y="4.0" width="492.0" height="222.0" rx="11.5" ry="11.5" fill="none" stroke="url(#border-grad)" stroke-width="4.0" stroke-opacity="0.45"/>
-              <rect x="7.5" y="7.5" width="485.0" height="215.0" rx="8.0" ry="8.0" fill="none" stroke="url(#border-grad)" stroke-width="4.5" stroke-opacity="0.24"/>
-              <rect x="11.5" y="11.5" width="477.0" height="207.0" rx="4.0" ry="4.0" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.11"/>
-              <rect x="16.0" y="16.0" width="468.0" height="198.0" rx="1" ry="1" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.04"/>
+    <g clip-path="url(#card-clip)">
+        <rect x="1.5" y="1.5" width="497" height="22" fill="url(#edge-top)"/>
+        <rect x="1.5" y="206.5" width="497" height="22" fill="url(#edge-bottom)"/>
+        <rect x="1.5" y="1.5" width="22" height="227" fill="url(#edge-left)"/>
+        <rect x="476.5" y="1.5" width="22" height="227" fill="url(#edge-right)"/>
+    </g>
+    <rect x="1.5" y="1.5" width="497" height="227" rx="14" ry="14" fill="none" stroke="url(#border-grad)" stroke-width="2.5"/>
 
     <!-- TITLE -->
 
