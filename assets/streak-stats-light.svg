@@ -1,19 +1,24 @@
 <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
         viewBox='0 0 495 195' width='495px' height='195px'>
 <defs>
+    <linearGradient id='border-grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop offset='0%' stop-color='#38BDF8'/>
+        <stop offset='50%' stop-color='#3B82F6'/>
+        <stop offset='100%' stop-color='#1D4ED8'/>
+    </linearGradient>
     <clipPath id='outer_rectangle'>
-        <rect width='495' height='195' rx='4.5'/>
+        <rect width='495' height='195' rx='8'/>
     </clipPath>
 </defs>
 <g clip-path='url(#outer_rectangle)'>
-    <rect fill='#FFFFFF' stroke='#D0D7DE' stroke-width='1' rx='4.5' x='0.5' y='0.5' width='494' height='194'/>
+    <rect fill='#FFFFFF' stroke='url(#border-grad)' stroke-width='2.5' rx='8' x='1.5' y='1.5' width='492' height='192'/>
     <line x1='165' y1='28' x2='165' y2='170' stroke-width='1' stroke='#D0D7DE'/>
     <line x1='330' y1='28' x2='330' y2='170' stroke-width='1' stroke='#D0D7DE'/>
 
     <!-- Total Contributions -->
     <g transform='translate(82.5, 48)'>
         <text x='0' y='32' text-anchor='middle' fill='#D9266F' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
-            49
+            50
         </text>
     </g>
     <g transform='translate(82.5, 84)'>

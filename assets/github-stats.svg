@@ -25,18 +25,31 @@
             />
         </linearGradient>
 
+        <linearGradient
+            id="border-grad"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+        >
+            <stop offset="0%" stop-color="#38BDF8" />
+            <stop offset="50%" stop-color="#3B82F6" />
+            <stop offset="100%" stop-color="#1D4ED8" />
+        </linearGradient>
+
     </defs>
 
     <!-- CARD -->
 
     <rect
-        x="1"
-        y="1"
-        width="698"
-        height="318"
+        x="1.5"
+        y="1.5"
+        width="697"
+        height="317"
         rx="18"
         fill="url(#background)"
-        stroke="#30363D"
+        stroke="url(#border-grad)"
+        stroke-width="2.5"
     />
 
     <!-- TITLE -->
@@ -60,9 +73,9 @@
         cy="150"
         r="92"
         fill="none"
-        stroke="#3B82F6"
+        stroke="#22C55E"
         stroke-width="25"
-        stroke-dasharray="495.47 578.05"
+        stroke-dasharray="497.13 578.05"
         stroke-dashoffset="-0.00"
         transform="rotate(-90 145 150)"
     />
@@ -74,8 +87,8 @@
         fill="none"
         stroke="#8B5CF6"
         stroke-width="25"
-        stroke-dasharray="47.19 578.05"
-        stroke-dashoffset="-495.47"
+        stroke-dasharray="46.24 578.05"
+        stroke-dashoffset="-497.13"
         transform="rotate(-90 145 150)"
     />
     
@@ -84,10 +97,10 @@
         cy="150"
         r="92"
         fill="none"
-        stroke="#22C55E"
+        stroke="#3B82F6"
         stroke-width="25"
         stroke-dasharray="0.00 578.05"
-        stroke-dashoffset="-542.66"
+        stroke-dashoffset="-543.37"
         transform="rotate(-90 145 150)"
     />
     
@@ -99,7 +112,7 @@
         stroke="#F59E0B"
         stroke-width="25"
         stroke-dasharray="0.00 578.05"
-        stroke-dashoffset="-542.66"
+        stroke-dashoffset="-543.37"
         transform="rotate(-90 145 150)"
     />
     
@@ -110,8 +123,8 @@
         fill="none"
         stroke="#EC4899"
         stroke-width="25"
-        stroke-dasharray="35.39 578.05"
-        stroke-dashoffset="-542.66"
+        stroke-dasharray="34.68 578.05"
+        stroke-dashoffset="-543.37"
         transform="rotate(-90 145 150)"
     />
     
@@ -134,7 +147,7 @@
         font-weight="bold"
         fill="#FFFFFF"
     >
-        49
+        50
     </text>
 
     <text
@@ -155,7 +168,7 @@
         cx="355"
         cy="70"
         r="6"
-        fill="#3B82F6"
+        fill="#22C55E"
     />
 
     <text
@@ -177,7 +190,7 @@
         font-weight="bold"
         fill="#FFFFFF"
     >
-        42
+        43
     </text>
     
     <circle
@@ -213,7 +226,7 @@
         cx="355"
         cy="150"
         r="6"
-        fill="#22C55E"
+        fill="#3B82F6"
     />
 
     <text
