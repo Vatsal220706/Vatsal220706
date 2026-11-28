@@ -315,9 +315,9 @@ jobs:
               total = 1
 
           # Donut settings
-          cx = 145
-          cy = 150
-          radius = 92
+          cx = 115
+          cy = 126
+          radius = 66
 
           circumference = 2 * math.pi * radius
 
@@ -336,7 +336,7 @@ jobs:
                   r="{radius}"
                   fill="none"
                   stroke="{color}"
-                  stroke-width="25"
+                  stroke-width="20"
                   stroke-dasharray="{length:.2f} {circumference:.2f}"
                   stroke-dashoffset="-{offset:.2f}"
                   transform="rotate(-90 {cx} {cy})"
@@ -394,7 +394,7 @@ jobs:
 
           def render_stats_svg(t):
               legend = ""
-              y_positions = [70, 110, 150, 190, 230]
+              y_positions = [68, 98, 128, 158, 188]
 
               for label, value, color, y in zip(
                   labels,
@@ -404,28 +404,28 @@ jobs:
               ):
                   legend += f"""
               <circle
-                  cx="355"
+                  cx="235"
                   cy="{y}"
-                  r="6"
+                  r="5.5"
                   fill="{color}"
               />
 
               <text
-                  x="375"
+                  x="252"
                   y="{y + 5}"
                   font-family="Arial, Helvetica, sans-serif"
-                  font-size="15"
+                  font-size="14"
                   fill="{t['legend_label']}"
               >
                   {label}
               </text>
 
               <text
-                  x="640"
+                  x="468"
                   y="{y + 5}"
                   text-anchor="end"
                   font-family="Arial, Helvetica, sans-serif"
-                  font-size="15"
+                  font-size="14"
                   font-weight="bold"
                   fill="{t['legend_val']}"
               >
@@ -434,9 +434,9 @@ jobs:
               """
 
               return f"""<svg
-              width="700"
-              height="320"
-              viewBox="0 0 700 320"
+              width="500"
+              height="230"
+              viewBox="0 0 500 230"
               xmlns="http://www.w3.org/2000/svg"
           >
 
@@ -479,20 +479,20 @@ jobs:
               <rect
                   x="1.5"
                   y="1.5"
-                  width="697"
-                  height="317"
-                  rx="18"
+                  width="497"
+                  height="227"
+                  rx="14"
                   fill="url(#background)"
               />
-              {render_border_shade(700, 320, 18)}
+              {render_border_shade(500, 230, 14)}
 
               <!-- TITLE -->
 
               <text
-                  x="30"
-                  y="38"
+                  x="26"
+                  y="34"
                   font-family="Arial, Helvetica, sans-serif"
-                  font-size="20"
+                  font-size="18"
                   font-weight="bold"
                   fill="{t['title']}"
               >
@@ -506,18 +506,18 @@ jobs:
               <!-- DONUT CENTER -->
 
               <circle
-                  cx="145"
-                  cy="150"
-                  r="60"
+                  cx="115"
+                  cy="126"
+                  r="44"
                   fill="{t['donut_center']}"
               />
 
               <text
-                  x="145"
-                  y="145"
+                  x="115"
+                  y="122"
                   text-anchor="middle"
                   font-family="Arial, Helvetica, sans-serif"
-                  font-size="22"
+                  font-size="20"
                   font-weight="bold"
                   fill="{t['total_num']}"
               >
@@ -525,11 +525,11 @@ jobs:
               </text>
 
               <text
-                  x="145"
-                  y="168"
+                  x="115"
+                  y="142"
                   text-anchor="middle"
                   font-family="Arial, Helvetica, sans-serif"
-                  font-size="12"
+                  font-size="11"
                   fill="{t['total_label']}"
               >
                   Total
@@ -542,10 +542,11 @@ jobs:
               <!-- FOOTER -->
 
               <text
-                  x="350"
-                  y="295"
+                  x="468"
+                  y="214"
+                  text-anchor="end"
                   font-family="Arial, Helvetica, sans-serif"
-                  font-size="11"
+                  font-size="10.5"
                   fill="{t['footer']}"
               >
                   @{USERNAME}
@@ -562,8 +563,8 @@ jobs:
           # =============================================================
 
           # Build contribution area chart
-          chart_width = 380
-          chart_height = 110
+          chart_width = 300
+          chart_height = 135
           num_points = len(weekly_totals)
 
           if num_points > 1:
@@ -666,7 +667,7 @@ jobs:
               </g>
               """
 
-              return f"""<svg xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+              return f"""<svg xmlns="http://www.w3.org/2000/svg" width="620" height="250" viewBox="0 0 620 250">
           <defs>
               <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#38BDF8"/>
@@ -674,43 +675,43 @@ jobs:
                   <stop offset="100%" stop-color="#1D4ED8"/>
               </linearGradient>
           </defs>
-          <rect x="1.5" y="1.5" rx="8" ry="8" height="197" width="697" fill="{t['bg']}"/>
-          {render_border_shade(700, 200, 8)}
+          <rect x="1.5" y="1.5" rx="12" ry="12" height="247" width="617" fill="{t['bg']}"/>
+          {render_border_shade(620, 250, 12)}
 
           <!-- Title -->
-          <text x="30" y="40" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif" font-size="22" fill="{t['title']}" font-weight="bold">{USERNAME}</text>
+          <text x="28" y="45" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif" font-size="22" fill="{t['title']}" font-weight="bold">{USERNAME}</text>
 
           <!-- User info -->
-          <g transform="translate(30,70)">
+          <g transform="translate(28,85)">
               <!-- Contributions icon -->
               <g transform="translate(0,0)">
                   <g width="14" height="14" fill="{t['icon']}">
                       <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
                   </g>
-                  <text x="21" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{total_contributions} Contributions on GitHub</text>
+                  <text x="22" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{total_contributions} Contributions on GitHub</text>
               </g>
 
               <!-- Repos icon -->
-              <g transform="translate(0,28)">
+              <g transform="translate(0,36)">
                   <g width="14" height="14" fill="{t['icon']}">
                       <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
                   </g>
-                  <text x="21" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{repositories} Public Repos</text>
+                  <text x="22" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{repositories} Public Repos</text>
               </g>
 
               <!-- Clock icon -->
-              <g transform="translate(0,56)">
+              <g transform="translate(0,72)">
                   <g width="14" height="14" fill="{t['icon']}">
                       <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
                   </g>
-                  <text x="21" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{joined_text}</text>
+                  <text x="22" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{joined_text}</text>
               </g>
           </g>
 
           <!-- Contribution chart -->
-          <g transform="translate(295,50)">
+          <g transform="translate(295,62)">
               <clipPath id="gpsc-clip">
-                  <rect x="-30" y="0" width="410" height="{chart_height}"/>
+                  <rect x="-30" y="0" width="330" height="{chart_height}"/>
               </clipPath>
               <g clip-path="url(#gpsc-clip)">
                   <path transform="translate(-30,0)" stroke="{t['area']}" fill="{t['area']}" opacity="1" d="{area_path}"/>
@@ -726,7 +727,7 @@ jobs:
                   {y_axis_labels}
               </g>
               <!-- Chart title -->
-              <text y="-15" x="230" fill="{t['axis']}" font-size="10" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">contributions in the last year</text>
+              <text y="-16" x="150" text-anchor="middle" fill="{t['axis']}" font-size="11" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">contributions in the last year</text>
           </g>
           </svg>
           """
@@ -775,7 +776,7 @@ jobs:
 
           def render_streak_svg(t):
               return f"""<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
-                  viewBox='0 0 495 195' width='495px' height='195px'>
+                  viewBox='0 0 500 230' width='500px' height='230px'>
           <defs>
               <linearGradient id='border-grad' x1='0%' y1='0%' x2='100%' y2='100%'>
                   <stop offset='0%' stop-color='#38BDF8'/>
@@ -783,69 +784,69 @@ jobs:
                   <stop offset='100%' stop-color='#1D4ED8'/>
               </linearGradient>
               <clipPath id='outer_rectangle'>
-                  <rect width='495' height='195' rx='8'/>
+                  <rect width='500' height='230' rx='14'/>
               </clipPath>
           </defs>
           <g clip-path='url(#outer_rectangle)'>
-              <rect fill='{t['bg']}' rx='8' x='1.5' y='1.5' width='492' height='192'/>
-              {render_border_shade(495, 195, 8)}
-              <line x1='165' y1='28' x2='165' y2='170' stroke-width='1' stroke='{t['divider']}'/>
-              <line x1='330' y1='28' x2='330' y2='170' stroke-width='1' stroke='{t['divider']}'/>
+              <rect fill='{t['bg']}' rx='14' x='1.5' y='1.5' width='497' height='227'/>
+              {render_border_shade(500, 230, 14)}
+              <line x1='166.7' y1='34' x2='166.7' y2='196' stroke-width='1' stroke='{t['divider']}'/>
+              <line x1='333.3' y1='34' x2='333.3' y2='196' stroke-width='1' stroke='{t['divider']}'/>
 
               <!-- Total Contributions -->
-              <g transform='translate(82.5, 48)'>
+              <g transform='translate(83.3, 65)'>
                   <text x='0' y='32' text-anchor='middle' fill='{t['accent']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
                       {total_contributions}
                   </text>
               </g>
-              <g transform='translate(82.5, 84)'>
+              <g transform='translate(83.3, 101)'>
                   <text x='0' y='32' text-anchor='middle' fill='{t['accent']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='14'>
                       Total Contributions
                   </text>
               </g>
-              <g transform='translate(82.5, 114)'>
+              <g transform='translate(83.3, 131)'>
                   <text x='0' y='32' text-anchor='middle' fill='{t['date']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
                       {contribution_range}
                   </text>
               </g>
 
               <!-- Current Streak -->
-              <g transform='translate(247.5, 108)'>
+              <g transform='translate(250, 125)'>
                   <text x='0' y='32' text-anchor='middle' fill='{t['streak']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='14'>
                       Current Streak
                   </text>
               </g>
-              <g transform='translate(247.5, 145)'>
+              <g transform='translate(250, 162)'>
                   <text x='0' y='21' text-anchor='middle' fill='{t['date']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
                       {current_streak_date}
                   </text>
               </g>
               <!-- Ring -->
-              <circle cx='247.5' cy='71' r='40' fill='none' stroke='{t['accent']}' stroke-width='5'/>
+              <circle cx='250' cy='88' r='40' fill='none' stroke='{t['accent']}' stroke-width='5'/>
               <!-- Fire icon -->
-              <g transform='translate(247.5, 19.5)'>
+              <g transform='translate(250, 36.5)'>
                   <path d='M -12 -0.5 L 15 -0.5 L 15 23.5 L -12 23.5 L -12 -0.5 Z' fill='none'/>
                   <path d='M 1.5 0.67 C 1.5 0.67 2.24 3.32 2.24 5.47 C 2.24 7.53 0.89 9.2 -1.17 9.2 C -3.23 9.2 -4.79 7.53 -4.79 5.47 L -4.76 5.11 C -6.78 7.51 -8 10.62 -8 13.99 C -8 18.41 -4.42 22 0 22 C 4.42 22 8 18.41 8 13.99 C 8 8.6 5.41 3.79 1.5 0.67 Z M -0.29 19 C -2.07 19 -3.51 17.6 -3.51 15.86 C -3.51 14.24 -2.46 13.1 -0.7 12.74 C 1.07 12.38 2.9 11.53 3.92 10.16 C 4.31 11.45 4.51 12.81 4.51 14.2 C 4.51 16.85 2.36 19 -0.29 19 Z' fill='{t['accent']}'/>
               </g>
               <!-- Current Streak number -->
-              <g transform='translate(247.5, 48)'>
+              <g transform='translate(250, 65)'>
                   <text x='0' y='32' text-anchor='middle' fill='{t['streak']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
                       {current_streak}
                   </text>
               </g>
 
               <!-- Longest Streak -->
-              <g transform='translate(412.5, 48)'>
+              <g transform='translate(416.7, 65)'>
                   <text x='0' y='32' text-anchor='middle' fill='{t['accent']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
                       {longest_streak}
                   </text>
               </g>
-              <g transform='translate(412.5, 84)'>
+              <g transform='translate(416.7, 101)'>
                   <text x='0' y='32' text-anchor='middle' fill='{t['accent']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='14'>
                       Longest Streak
                   </text>
               </g>
-              <g transform='translate(412.5, 114)'>
+              <g transform='translate(416.7, 131)'>
                   <text x='0' y='32' text-anchor='middle' fill='{t['date']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
                       {longest_streak_date}
                   </text>
@@ -951,9 +952,9 @@ jobs:
           }
           def_colors = ["#8B5CF6","#EC4899","#F59E0B","#10B981","#3B82F6","#EF4444","#14B8A6","#F97316"]
 
-          card_w = 300
-          card_h = 60 + len(sorted_langs) * 28 + 30
-          bar_w = 260
+          card_w = 320
+          card_h = 250
+          bar_w = 280
           bar_x = 20
 
           bar_segs = ""
@@ -987,11 +988,17 @@ jobs:
               for i, (lang, bc) in enumerate(sorted_langs):
                   pct = bc / total_bytes * 100
                   col = lang_colors.get(lang, def_colors[i % len(def_colors)])
-                  y = 80 + i * 28
+                  col_idx = i % 2
+                  row_idx = i // 2
+                  cx = bar_x + col_idx * 146 + 6
+                  tx = cx + 12
+                  px = bar_x + col_idx * 146 + 134
+                  y = 88 + row_idx * 36
+                  short_lang = lang if len(lang) <= 11 else lang[:10] + "â€¦"
                   legend += (
-                      f'<circle cx="{bar_x+6}" cy="{y+6}" r="6" fill="{col}"/>'
-                      f'<text x="{bar_x+18}" y="{y+11}" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="{t["lang"]}">{lang}</text>'
-                      f'<text x="{card_w-10}" y="{y+11}" text-anchor="end" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="{t["pct"]}">{pct:.1f}%</text>'
+                      f'<circle cx="{cx}" cy="{y+5}" r="5.5" fill="{col}"/>'
+                      f'<text x="{tx}" y="{y+9}" font-family="Segoe UI,Ubuntu,sans-serif" font-size="12" fill="{t["lang"]}">{short_lang}</text>'
+                      f'<text x="{px}" y="{y+9}" text-anchor="end" font-family="Segoe UI,Ubuntu,sans-serif" font-size="11.5" fill="{t["pct"]}">{pct:.1f}%</text>'
                   )
 
               shade = ""
