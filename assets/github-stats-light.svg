@@ -1,7 +1,7 @@
 <svg
-    width="700"
-    height="320"
-    viewBox="0 0 700 320"
+    width="500"
+    height="230"
+    viewBox="0 0 500 230"
     xmlns="http://www.w3.org/2000/svg"
 >
 
@@ -44,24 +44,24 @@
     <rect
         x="1.5"
         y="1.5"
-        width="697"
-        height="317"
-        rx="18"
+        width="497"
+        height="227"
+        rx="14"
         fill="url(#background)"
     />
-    <rect x="1.5" y="1.5" width="697.0" height="317.0" rx="18.0" ry="18.0" fill="none" stroke="url(#border-grad)" stroke-width="3.0" stroke-opacity="1.0"/>
-              <rect x="4.0" y="4.0" width="692.0" height="312.0" rx="15.5" ry="15.5" fill="none" stroke="url(#border-grad)" stroke-width="4.0" stroke-opacity="0.45"/>
-              <rect x="7.5" y="7.5" width="685.0" height="305.0" rx="12.0" ry="12.0" fill="none" stroke="url(#border-grad)" stroke-width="4.5" stroke-opacity="0.24"/>
-              <rect x="11.5" y="11.5" width="677.0" height="297.0" rx="8.0" ry="8.0" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.11"/>
-              <rect x="16.0" y="16.0" width="668.0" height="288.0" rx="3.5" ry="3.5" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.04"/>
+    <rect x="1.5" y="1.5" width="497.0" height="227.0" rx="14.0" ry="14.0" fill="none" stroke="url(#border-grad)" stroke-width="3.0" stroke-opacity="1.0"/>
+              <rect x="4.0" y="4.0" width="492.0" height="222.0" rx="11.5" ry="11.5" fill="none" stroke="url(#border-grad)" stroke-width="4.0" stroke-opacity="0.45"/>
+              <rect x="7.5" y="7.5" width="485.0" height="215.0" rx="8.0" ry="8.0" fill="none" stroke="url(#border-grad)" stroke-width="4.5" stroke-opacity="0.24"/>
+              <rect x="11.5" y="11.5" width="477.0" height="207.0" rx="4.0" ry="4.0" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.11"/>
+              <rect x="16.0" y="16.0" width="468.0" height="198.0" rx="1" ry="1" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.04"/>
 
     <!-- TITLE -->
 
     <text
-        x="30"
-        y="38"
+        x="26"
+        y="34"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="20"
+        font-size="18"
         font-weight="bold"
         fill="#1F2328"
     >
@@ -72,93 +72,93 @@
 
     
     <circle
-        cx="145"
-        cy="150"
-        r="92"
+        cx="115"
+        cy="126"
+        r="66"
         fill="none"
         stroke="#22C55E"
-        stroke-width="25"
-        stroke-dasharray="500.24 578.05"
+        stroke-width="20"
+        stroke-dasharray="360.93 414.69"
         stroke-dashoffset="-0.00"
-        transform="rotate(-90 145 150)"
+        transform="rotate(-90 115 126)"
     />
     
     <circle
-        cx="145"
-        cy="150"
-        r="92"
+        cx="115"
+        cy="126"
+        r="66"
         fill="none"
         stroke="#8B5CF6"
-        stroke-width="25"
-        stroke-dasharray="44.47 578.05"
-        stroke-dashoffset="-500.24"
-        transform="rotate(-90 145 150)"
+        stroke-width="20"
+        stroke-dasharray="30.72 414.69"
+        stroke-dashoffset="-360.93"
+        transform="rotate(-90 115 126)"
     />
     
     <circle
-        cx="145"
-        cy="150"
-        r="92"
+        cx="115"
+        cy="126"
+        r="66"
         fill="none"
         stroke="#3B82F6"
-        stroke-width="25"
-        stroke-dasharray="0.00 578.05"
-        stroke-dashoffset="-544.70"
-        transform="rotate(-90 145 150)"
+        stroke-width="20"
+        stroke-dasharray="0.00 414.69"
+        stroke-dashoffset="-391.65"
+        transform="rotate(-90 115 126)"
     />
     
     <circle
-        cx="145"
-        cy="150"
-        r="92"
+        cx="115"
+        cy="126"
+        r="66"
         fill="none"
         stroke="#F59E0B"
-        stroke-width="25"
-        stroke-dasharray="0.00 578.05"
-        stroke-dashoffset="-544.70"
-        transform="rotate(-90 145 150)"
+        stroke-width="20"
+        stroke-dasharray="0.00 414.69"
+        stroke-dashoffset="-391.65"
+        transform="rotate(-90 115 126)"
     />
     
     <circle
-        cx="145"
-        cy="150"
-        r="92"
+        cx="115"
+        cy="126"
+        r="66"
         fill="none"
         stroke="#EC4899"
-        stroke-width="25"
-        stroke-dasharray="33.35 578.05"
-        stroke-dashoffset="-544.70"
-        transform="rotate(-90 145 150)"
+        stroke-width="20"
+        stroke-dasharray="23.04 414.69"
+        stroke-dashoffset="-391.65"
+        transform="rotate(-90 115 126)"
     />
     
 
     <!-- DONUT CENTER -->
 
     <circle
-        cx="145"
-        cy="150"
-        r="60"
+        cx="115"
+        cy="126"
+        r="44"
         fill="#FFFFFF"
     />
 
     <text
-        x="145"
-        y="145"
+        x="115"
+        y="122"
         text-anchor="middle"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="22"
+        font-size="20"
         font-weight="bold"
         fill="#1F2328"
     >
-        52
+        54
     </text>
 
     <text
-        x="145"
-        y="168"
+        x="115"
+        y="142"
         text-anchor="middle"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="12"
+        font-size="11"
         fill="#656D76"
     >
         Total
@@ -168,57 +168,57 @@
 
     
     <circle
-        cx="355"
-        cy="70"
-        r="6"
+        cx="235"
+        cy="68"
+        r="5.5"
         fill="#22C55E"
     />
 
     <text
-        x="375"
-        y="75"
+        x="252"
+        y="73"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         fill="#424A53"
     >
         Commits
     </text>
 
     <text
-        x="640"
-        y="75"
+        x="468"
+        y="73"
         text-anchor="end"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         font-weight="bold"
         fill="#1F2328"
     >
-        45
+        47
     </text>
     
     <circle
-        cx="355"
-        cy="110"
-        r="6"
+        cx="235"
+        cy="98"
+        r="5.5"
         fill="#8B5CF6"
     />
 
     <text
-        x="375"
-        y="115"
+        x="252"
+        y="103"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         fill="#424A53"
     >
         Pull Requests
     </text>
 
     <text
-        x="640"
-        y="115"
+        x="468"
+        y="103"
         text-anchor="end"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         font-weight="bold"
         fill="#1F2328"
     >
@@ -226,28 +226,28 @@
     </text>
     
     <circle
-        cx="355"
-        cy="150"
-        r="6"
+        cx="235"
+        cy="128"
+        r="5.5"
         fill="#3B82F6"
     />
 
     <text
-        x="375"
-        y="155"
+        x="252"
+        y="133"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         fill="#424A53"
     >
         Issues
     </text>
 
     <text
-        x="640"
-        y="155"
+        x="468"
+        y="133"
         text-anchor="end"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         font-weight="bold"
         fill="#1F2328"
     >
@@ -255,28 +255,28 @@
     </text>
     
     <circle
-        cx="355"
-        cy="190"
-        r="6"
+        cx="235"
+        cy="158"
+        r="5.5"
         fill="#F59E0B"
     />
 
     <text
-        x="375"
-        y="195"
+        x="252"
+        y="163"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         fill="#424A53"
     >
         Stars
     </text>
 
     <text
-        x="640"
-        y="195"
+        x="468"
+        y="163"
         text-anchor="end"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         font-weight="bold"
         fill="#1F2328"
     >
@@ -284,28 +284,28 @@
     </text>
     
     <circle
-        cx="355"
-        cy="230"
-        r="6"
+        cx="235"
+        cy="188"
+        r="5.5"
         fill="#EC4899"
     />
 
     <text
-        x="375"
-        y="235"
+        x="252"
+        y="193"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         fill="#424A53"
     >
         Repositories
     </text>
 
     <text
-        x="640"
-        y="235"
+        x="468"
+        y="193"
         text-anchor="end"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="15"
+        font-size="14"
         font-weight="bold"
         fill="#1F2328"
     >
@@ -316,10 +316,11 @@
     <!-- FOOTER -->
 
     <text
-        x="350"
-        y="295"
+        x="468"
+        y="214"
+        text-anchor="end"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="11"
+        font-size="10.5"
         fill="#656D76"
     >
         @Vatsal220706

@@ -1,5 +1,5 @@
 <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
-        viewBox='0 0 495 195' width='495px' height='195px'>
+        viewBox='0 0 500 230' width='500px' height='230px'>
 <defs>
     <linearGradient id='border-grad' x1='0%' y1='0%' x2='100%' y2='100%'>
         <stop offset='0%' stop-color='#38BDF8'/>
@@ -7,73 +7,73 @@
         <stop offset='100%' stop-color='#1D4ED8'/>
     </linearGradient>
     <clipPath id='outer_rectangle'>
-        <rect width='495' height='195' rx='8'/>
+        <rect width='500' height='230' rx='14'/>
     </clipPath>
 </defs>
 <g clip-path='url(#outer_rectangle)'>
-    <rect fill='#FFFFFF' rx='8' x='1.5' y='1.5' width='492' height='192'/>
-    <rect x="1.5" y="1.5" width="492.0" height="192.0" rx="8.0" ry="8.0" fill="none" stroke="url(#border-grad)" stroke-width="3.0" stroke-opacity="1.0"/>
-              <rect x="4.0" y="4.0" width="487.0" height="187.0" rx="5.5" ry="5.5" fill="none" stroke="url(#border-grad)" stroke-width="4.0" stroke-opacity="0.45"/>
-              <rect x="7.5" y="7.5" width="480.0" height="180.0" rx="2.0" ry="2.0" fill="none" stroke="url(#border-grad)" stroke-width="4.5" stroke-opacity="0.24"/>
-              <rect x="11.5" y="11.5" width="472.0" height="172.0" rx="1" ry="1" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.11"/>
-              <rect x="16.0" y="16.0" width="463.0" height="163.0" rx="1" ry="1" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.04"/>
-    <line x1='165' y1='28' x2='165' y2='170' stroke-width='1' stroke='#D0D7DE'/>
-    <line x1='330' y1='28' x2='330' y2='170' stroke-width='1' stroke='#D0D7DE'/>
+    <rect fill='#FFFFFF' rx='14' x='1.5' y='1.5' width='497' height='227'/>
+    <rect x="1.5" y="1.5" width="497.0" height="227.0" rx="14.0" ry="14.0" fill="none" stroke="url(#border-grad)" stroke-width="3.0" stroke-opacity="1.0"/>
+              <rect x="4.0" y="4.0" width="492.0" height="222.0" rx="11.5" ry="11.5" fill="none" stroke="url(#border-grad)" stroke-width="4.0" stroke-opacity="0.45"/>
+              <rect x="7.5" y="7.5" width="485.0" height="215.0" rx="8.0" ry="8.0" fill="none" stroke="url(#border-grad)" stroke-width="4.5" stroke-opacity="0.24"/>
+              <rect x="11.5" y="11.5" width="477.0" height="207.0" rx="4.0" ry="4.0" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.11"/>
+              <rect x="16.0" y="16.0" width="468.0" height="198.0" rx="1" ry="1" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.04"/>
+    <line x1='166.7' y1='34' x2='166.7' y2='196' stroke-width='1' stroke='#D0D7DE'/>
+    <line x1='333.3' y1='34' x2='333.3' y2='196' stroke-width='1' stroke='#D0D7DE'/>
 
     <!-- Total Contributions -->
-    <g transform='translate(82.5, 48)'>
+    <g transform='translate(83.3, 65)'>
         <text x='0' y='32' text-anchor='middle' fill='#D9266F' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
-            52
+            54
         </text>
     </g>
-    <g transform='translate(82.5, 84)'>
+    <g transform='translate(83.3, 101)'>
         <text x='0' y='32' text-anchor='middle' fill='#D9266F' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='14'>
             Total Contributions
         </text>
     </g>
-    <g transform='translate(82.5, 114)'>
+    <g transform='translate(83.3, 131)'>
         <text x='0' y='32' text-anchor='middle' fill='#57606A' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
             Jun 10, 2026 - Present
         </text>
     </g>
 
     <!-- Current Streak -->
-    <g transform='translate(247.5, 108)'>
+    <g transform='translate(250, 125)'>
         <text x='0' y='32' text-anchor='middle' fill='#D97706' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='14'>
             Current Streak
         </text>
     </g>
-    <g transform='translate(247.5, 145)'>
+    <g transform='translate(250, 162)'>
         <text x='0' y='21' text-anchor='middle' fill='#57606A' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
             Nov 28
         </text>
     </g>
     <!-- Ring -->
-    <circle cx='247.5' cy='71' r='40' fill='none' stroke='#D9266F' stroke-width='5'/>
+    <circle cx='250' cy='88' r='40' fill='none' stroke='#D9266F' stroke-width='5'/>
     <!-- Fire icon -->
-    <g transform='translate(247.5, 19.5)'>
+    <g transform='translate(250, 36.5)'>
         <path d='M -12 -0.5 L 15 -0.5 L 15 23.5 L -12 23.5 L -12 -0.5 Z' fill='none'/>
         <path d='M 1.5 0.67 C 1.5 0.67 2.24 3.32 2.24 5.47 C 2.24 7.53 0.89 9.2 -1.17 9.2 C -3.23 9.2 -4.79 7.53 -4.79 5.47 L -4.76 5.11 C -6.78 7.51 -8 10.62 -8 13.99 C -8 18.41 -4.42 22 0 22 C 4.42 22 8 18.41 8 13.99 C 8 8.6 5.41 3.79 1.5 0.67 Z M -0.29 19 C -2.07 19 -3.51 17.6 -3.51 15.86 C -3.51 14.24 -2.46 13.1 -0.7 12.74 C 1.07 12.38 2.9 11.53 3.92 10.16 C 4.31 11.45 4.51 12.81 4.51 14.2 C 4.51 16.85 2.36 19 -0.29 19 Z' fill='#D9266F'/>
     </g>
     <!-- Current Streak number -->
-    <g transform='translate(247.5, 48)'>
+    <g transform='translate(250, 65)'>
         <text x='0' y='32' text-anchor='middle' fill='#D97706' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
             1
         </text>
     </g>
 
     <!-- Longest Streak -->
-    <g transform='translate(412.5, 48)'>
+    <g transform='translate(416.7, 65)'>
         <text x='0' y='32' text-anchor='middle' fill='#D9266F' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
             4
         </text>
     </g>
-    <g transform='translate(412.5, 84)'>
+    <g transform='translate(416.7, 101)'>
         <text x='0' y='32' text-anchor='middle' fill='#D9266F' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='14'>
             Longest Streak
         </text>
     </g>
-    <g transform='translate(412.5, 114)'>
+    <g transform='translate(416.7, 131)'>
         <text x='0' y='32' text-anchor='middle' fill='#57606A' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
             Jul 22 - Jul 25
         </text>
