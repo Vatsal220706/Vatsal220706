@@ -1,4 +1,4 @@
-﻿# 👋 Hi, I'm Vatsal Jaroli
+# 👋 Hi, I'm Vatsal Jaroli
 
 ### 💻 Web Development — Currently Learning | 🎓 B.Tech CSE Student | 🤖 AI/ML Enthusiast
 
@@ -86,29 +86,29 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
 <h2 align="center">📊 GitHub Statistics</h2>
 
 <p align="center">
-  <img
-    src="./assets/profile-details.svg?v=1"
-    alt="Vatsal's GitHub Profile Summary"
-    width="65%"
-  />
-  <img
-    src="./assets/top-langs.svg"
-    alt="Most Used Languages"
-    width="30%"
-  />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-details.svg?v=2" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile-details-light.svg?v=2" />
+    <img src="./assets/profile-details.svg?v=2" alt="Vatsal's GitHub Profile Summary" width="65%" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/top-langs.svg?v=2" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/top-langs-light.svg?v=2" />
+    <img src="./assets/top-langs.svg?v=2" alt="Most Used Languages" width="30%" />
+  </picture>
 </p>
 
 <p align="center">
-  <img
-    src="./assets/github-stats.svg"
-    width="455"
-    alt="GitHub Statistics"
-  />
-  <img
-    src="./assets/streak-stats.svg?v=1"
-    width="45%"
-    alt="GitHub Streak"
-  />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/github-stats.svg?v=2" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/github-stats-light.svg?v=2" />
+    <img src="./assets/github-stats.svg?v=2" width="455" alt="GitHub Statistics" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/streak-stats.svg?v=2" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/streak-stats-light.svg?v=2" />
+    <img src="./assets/streak-stats.svg?v=2" width="45%" alt="GitHub Streak" />
+  </picture>
 </p>
 
 

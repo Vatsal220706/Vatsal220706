@@ -1,4 +1,4 @@
-﻿name: Update GitHub Stats Card
+name: Update GitHub Stats Card
 
 on:
   push:
@@ -33,9 +33,13 @@ jobs:
 
           USERNAME = "Vatsal220706"
           OUTPUT_STATS = "assets/github-stats.svg"
+          OUTPUT_STATS_LIGHT = "assets/github-stats-light.svg"
           OUTPUT_PROFILE = "assets/profile-details.svg"
+          OUTPUT_PROFILE_LIGHT = "assets/profile-details-light.svg"
           OUTPUT_STREAK = "assets/streak-stats.svg"
+          OUTPUT_STREAK_LIGHT = "assets/streak-stats-light.svg"
           OUTPUT_LANGS = "assets/top-langs.svg"
+          OUTPUT_LANGS_LIGHT = "assets/top-langs-light.svg"
 
           headers = {
               "Accept": "application/vnd.github+json",
@@ -343,19 +347,44 @@ jobs:
 
           donut = "".join(circles)
 
-          # Legend
-          legend = ""
+          STATS_THEMES = {
+              "dark": {
+                  "bg_start": "#0D1117",
+                  "bg_end": "#161B22",
+                  "border": "#30363D",
+                  "title": "#FFFFFF",
+                  "donut_center": "#0D1117",
+                  "total_num": "#FFFFFF",
+                  "total_label": "#8B949E",
+                  "legend_label": "#C9D1D9",
+                  "legend_val": "#FFFFFF",
+                  "footer": "#6E7681",
+              },
+              "light": {
+                  "bg_start": "#FFFFFF",
+                  "bg_end": "#F6F8FA",
+                  "border": "#D0D7DE",
+                  "title": "#1F2328",
+                  "donut_center": "#FFFFFF",
+                  "total_num": "#1F2328",
+                  "total_label": "#656D76",
+                  "legend_label": "#424A53",
+                  "legend_val": "#1F2328",
+                  "footer": "#656D76",
+              },
+          }
 
-          y_positions = [70, 110, 150, 190, 230]
+          def render_stats_svg(t):
+              legend = ""
+              y_positions = [70, 110, 150, 190, 230]
 
-          for label, value, color, y in zip(
-              labels,
-              values,
-              colors,
-              y_positions
-          ):
-
-              legend += f"""
+              for label, value, color, y in zip(
+                  labels,
+                  values,
+                  colors,
+                  y_positions
+              ):
+                  legend += f"""
               <circle
                   cx="355"
                   cy="{y}"
@@ -368,7 +397,7 @@ jobs:
                   y="{y + 5}"
                   font-family="Arial, Helvetica, sans-serif"
                   font-size="15"
-                  fill="#C9D1D9"
+                  fill="{t['legend_label']}"
               >
                   {label}
               </text>
@@ -380,13 +409,13 @@ jobs:
                   font-family="Arial, Helvetica, sans-serif"
                   font-size="15"
                   font-weight="bold"
-                  fill="#FFFFFF"
+                  fill="{t['legend_val']}"
               >
                   {value}
               </text>
               """
 
-          svg_stats = f"""<svg
+              return f"""<svg
               width="700"
               height="320"
               viewBox="0 0 700 320"
@@ -404,12 +433,12 @@ jobs:
                   >
                       <stop
                           offset="0%"
-                          stop-color="#0D1117"
+                          stop-color="{t['bg_start']}"
                       />
 
                       <stop
                           offset="100%"
-                          stop-color="#161B22"
+                          stop-color="{t['bg_end']}"
                       />
                   </linearGradient>
 
@@ -424,7 +453,7 @@ jobs:
                   height="318"
                   rx="18"
                   fill="url(#background)"
-                  stroke="#30363D"
+                  stroke="{t['border']}"
               />
 
               <!-- TITLE -->
@@ -435,7 +464,7 @@ jobs:
                   font-family="Arial, Helvetica, sans-serif"
                   font-size="20"
                   font-weight="bold"
-                  fill="#FFFFFF"
+                  fill="{t['title']}"
               >
                   GitHub Statistics
               </text>
@@ -450,7 +479,7 @@ jobs:
                   cx="145"
                   cy="150"
                   r="60"
-                  fill="#0D1117"
+                  fill="{t['donut_center']}"
               />
 
               <text
@@ -460,7 +489,7 @@ jobs:
                   font-family="Arial, Helvetica, sans-serif"
                   font-size="22"
                   font-weight="bold"
-                  fill="#FFFFFF"
+                  fill="{t['total_num']}"
               >
                   {total}
               </text>
@@ -471,7 +500,7 @@ jobs:
                   text-anchor="middle"
                   font-family="Arial, Helvetica, sans-serif"
                   font-size="12"
-                  fill="#8B949E"
+                  fill="{t['total_label']}"
               >
                   Total
               </text>
@@ -487,13 +516,16 @@ jobs:
                   y="295"
                   font-family="Arial, Helvetica, sans-serif"
                   font-size="11"
-                  fill="#6E7681"
+                  fill="{t['footer']}"
               >
                   @{USERNAME}
               </text>
 
           </svg>
           """
+
+          svg_stats = render_stats_svg(STATS_THEMES["dark"])
+          svg_stats_light = render_stats_svg(STATS_THEMES["light"])
 
           # =============================================================
           #  CARD 2: PROFILE DETAILS
@@ -549,69 +581,91 @@ jobs:
           else:
               area_path = f"M0,{chart_height}L{chart_width},{chart_height}L{chart_width},{chart_height}L0,{chart_height}Z"
 
-          # Build x-axis labels (show ~7 labels evenly spread)
-          num_labels = min(7, num_points)
-          x_axis_labels = ""
-          if num_points > 0:
-              step = max(1, num_points // (num_labels - 1)) if num_labels > 1 else 1
-              label_indices = list(range(0, num_points, step))
-              if label_indices[-1] != num_points - 1:
-                  label_indices.append(num_points - 1)
+          PROFILE_THEMES = {
+              "dark": {
+                  "bg": "#141321",
+                  "border": "#141321",
+                  "title": "#fe428e",
+                  "icon": "#f8d847",
+                  "text": "#a9fef7",
+                  "axis": "#a9fef7",
+                  "area": "#ae81ff",
+              },
+              "light": {
+                  "bg": "#FFFFFF",
+                  "border": "#D0D7DE",
+                  "title": "#D9266F",
+                  "icon": "#D97706",
+                  "text": "#1F2328",
+                  "axis": "#57606A",
+                  "area": "#7C3AED",
+              },
+          }
 
-              for idx in label_indices:
-                  x = idx * x_step
-                  d = datetime.strptime(weekly_totals[idx]["date"], "%Y-%m-%d")
-                  label = d.strftime("%y/%m")
-                  x_axis_labels += f"""
+          def render_profile_svg(t):
+              # Build x-axis labels (show ~7 labels evenly spread)
+              num_labels = min(7, num_points)
+              x_axis_labels = ""
+              if num_points > 0:
+                  step = max(1, num_points // (num_labels - 1)) if num_labels > 1 else 1
+                  label_indices = list(range(0, num_points, step))
+                  if label_indices[-1] != num_points - 1:
+                      label_indices.append(num_points - 1)
+
+                  for idx in label_indices:
+                      x = idx * x_step
+                      d = datetime.strptime(weekly_totals[idx]["date"], "%Y-%m-%d")
+                      label = d.strftime("%y/%m")
+                      x_axis_labels += f"""
                   <g transform="translate({x:.1f},0)">
-                      <line stroke="#a9fef7" y2="6"/>
-                      <text fill="#a9fef7" y="9" dy="0.71em" text-anchor="middle" font-size="10" font-family="sans-serif">{label}</text>
+                      <line stroke="{t['axis']}" y2="6"/>
+                      <text fill="{t['axis']}" y="9" dy="0.71em" text-anchor="middle" font-size="10" font-family="sans-serif">{label}</text>
                   </g>
                   """
 
-          # Build y-axis labels
-          y_axis_labels = ""
-          num_y_ticks = min(6, max_weekly + 1)
-          for i in range(num_y_ticks):
-              val = round(max_weekly * i / (num_y_ticks - 1)) if num_y_ticks > 1 else 0
-              y = chart_height - (val / max_weekly * chart_height) if max_weekly > 0 else chart_height
-              y_axis_labels += f"""
+              # Build y-axis labels
+              y_axis_labels = ""
+              num_y_ticks = min(6, max_weekly + 1)
+              for i in range(num_y_ticks):
+                  val = round(max_weekly * i / (num_y_ticks - 1)) if num_y_ticks > 1 else 0
+                  y = chart_height - (val / max_weekly * chart_height) if max_weekly > 0 else chart_height
+                  y_axis_labels += f"""
               <g transform="translate(0,{y:.1f})">
-                  <line stroke="#a9fef7" x2="6"/>
-                  <text fill="#a9fef7" x="9" dy="0.32em" font-size="10" font-family="sans-serif">{val}</text>
+                  <line stroke="{t['axis']}" x2="6"/>
+                  <text fill="{t['axis']}" x="9" dy="0.32em" font-size="10" font-family="sans-serif">{val}</text>
               </g>
               """
 
-          svg_profile = f"""<svg xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
-          <rect x="1" y="1" rx="5" ry="5" height="99%" width="99.7%" stroke="#141321" stroke-width="1" fill="#141321"/>
+              return f"""<svg xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+          <rect x="1" y="1" rx="5" ry="5" height="99%" width="99.7%" stroke="{t['border']}" stroke-width="1" fill="{t['bg']}"/>
 
           <!-- Title -->
-          <text x="30" y="40" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif" font-size="22" fill="#fe428e" font-weight="bold">{USERNAME}</text>
+          <text x="30" y="40" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif" font-size="22" fill="{t['title']}" font-weight="bold">{USERNAME}</text>
 
           <!-- User info -->
           <g transform="translate(30,70)">
               <!-- Contributions icon -->
               <g transform="translate(0,0)">
-                  <g width="14" height="14" fill="#f8d847">
+                  <g width="14" height="14" fill="{t['icon']}">
                       <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
                   </g>
-                  <text x="21" y="14" fill="#a9fef7" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{total_contributions} Contributions on GitHub</text>
+                  <text x="21" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{total_contributions} Contributions on GitHub</text>
               </g>
 
               <!-- Repos icon -->
               <g transform="translate(0,28)">
-                  <g width="14" height="14" fill="#f8d847">
+                  <g width="14" height="14" fill="{t['icon']}">
                       <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
                   </g>
-                  <text x="21" y="14" fill="#a9fef7" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{repositories} Public Repos</text>
+                  <text x="21" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{repositories} Public Repos</text>
               </g>
 
               <!-- Clock icon -->
               <g transform="translate(0,56)">
-                  <g width="14" height="14" fill="#f8d847">
+                  <g width="14" height="14" fill="{t['icon']}">
                       <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
                   </g>
-                  <text x="21" y="14" fill="#a9fef7" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{joined_text}</text>
+                  <text x="21" y="14" fill="{t['text']}" font-size="14" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">{joined_text}</text>
               </g>
           </g>
 
@@ -621,23 +675,26 @@ jobs:
                   <rect x="-30" y="0" width="410" height="{chart_height}"/>
               </clipPath>
               <g clip-path="url(#gpsc-clip)">
-                  <path transform="translate(-30,0)" stroke="#ae81ff" fill="#ae81ff" opacity="1" d="{area_path}"/>
+                  <path transform="translate(-30,0)" stroke="{t['area']}" fill="{t['area']}" opacity="1" d="{area_path}"/>
               </g>
               <!-- X axis -->
-              <g color="#a9fef7" transform="translate(-30,{chart_height})" fill="none" font-size="10" text-anchor="middle">
+              <g color="{t['axis']}" transform="translate(-30,{chart_height})" fill="none" font-size="10" text-anchor="middle">
                   <path class="domain" stroke="currentColor" d="M0.5,6V0.5H{chart_width}.5V6"/>
                   {x_axis_labels}
               </g>
               <!-- Y axis -->
-              <g color="#a9fef7" transform="translate({chart_width - 30},0)" fill="none" font-size="10" text-anchor="start">
+              <g color="{t['axis']}" transform="translate({chart_width - 30},0)" fill="none" font-size="10" text-anchor="start">
                   <path class="domain" stroke="currentColor" d="M6,{chart_height}.5H0.5V0.5H6"/>
                   {y_axis_labels}
               </g>
               <!-- Chart title -->
-              <text y="-15" x="230" fill="#a9fef7" font-size="10" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">contributions in the last year</text>
+              <text y="-15" x="230" fill="{t['axis']}" font-size="10" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif">contributions in the last year</text>
           </g>
           </svg>
           """
+
+          svg_profile = render_profile_svg(PROFILE_THEMES["dark"])
+          svg_profile_light = render_profile_svg(PROFILE_THEMES["light"])
 
           # =============================================================
           #  CARD 3: STREAK STATS
@@ -659,7 +716,27 @@ jobs:
               else:
                   longest_streak_date = format_date_range(longest_start, longest_end)
 
-          svg_streak = f"""<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+          STREAK_THEMES = {
+              "dark": {
+                  "bg": "#141321",
+                  "border": "#141321",
+                  "divider": "#E4E2E2",
+                  "accent": "#FE428E",
+                  "date": "#A9FEF7",
+                  "streak": "#F8D847",
+              },
+              "light": {
+                  "bg": "#FFFFFF",
+                  "border": "#D0D7DE",
+                  "divider": "#D0D7DE",
+                  "accent": "#D9266F",
+                  "date": "#57606A",
+                  "streak": "#D97706",
+              },
+          }
+
+          def render_streak_svg(t):
+              return f"""<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
                   viewBox='0 0 495 195' width='495px' height='195px'>
           <defs>
               <clipPath id='outer_rectangle'>
@@ -667,65 +744,65 @@ jobs:
               </clipPath>
           </defs>
           <g clip-path='url(#outer_rectangle)'>
-              <rect fill='#141321' rx='4.5' x='0.5' y='0.5' width='494' height='194'/>
-              <line x1='165' y1='28' x2='165' y2='170' stroke-width='1' stroke='#E4E2E2'/>
-              <line x1='330' y1='28' x2='330' y2='170' stroke-width='1' stroke='#E4E2E2'/>
+              <rect fill='{t['bg']}' stroke='{t['border']}' stroke-width='1' rx='4.5' x='0.5' y='0.5' width='494' height='194'/>
+              <line x1='165' y1='28' x2='165' y2='170' stroke-width='1' stroke='{t['divider']}'/>
+              <line x1='330' y1='28' x2='330' y2='170' stroke-width='1' stroke='{t['divider']}'/>
 
               <!-- Total Contributions -->
               <g transform='translate(82.5, 48)'>
-                  <text x='0' y='32' text-anchor='middle' fill='#FE428E' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
+                  <text x='0' y='32' text-anchor='middle' fill='{t['accent']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
                       {total_contributions}
                   </text>
               </g>
               <g transform='translate(82.5, 84)'>
-                  <text x='0' y='32' text-anchor='middle' fill='#FE428E' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='14'>
+                  <text x='0' y='32' text-anchor='middle' fill='{t['accent']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='14'>
                       Total Contributions
                   </text>
               </g>
               <g transform='translate(82.5, 114)'>
-                  <text x='0' y='32' text-anchor='middle' fill='#A9FEF7' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
+                  <text x='0' y='32' text-anchor='middle' fill='{t['date']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
                       {contribution_range}
                   </text>
               </g>
 
               <!-- Current Streak -->
               <g transform='translate(247.5, 108)'>
-                  <text x='0' y='32' text-anchor='middle' fill='#F8D847' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='14'>
+                  <text x='0' y='32' text-anchor='middle' fill='{t['streak']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='14'>
                       Current Streak
                   </text>
               </g>
               <g transform='translate(247.5, 145)'>
-                  <text x='0' y='21' text-anchor='middle' fill='#A9FEF7' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
+                  <text x='0' y='21' text-anchor='middle' fill='{t['date']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
                       {current_streak_date}
                   </text>
               </g>
               <!-- Ring -->
-              <circle cx='247.5' cy='71' r='40' fill='none' stroke='#FE428E' stroke-width='5'/>
+              <circle cx='247.5' cy='71' r='40' fill='none' stroke='{t['accent']}' stroke-width='5'/>
               <!-- Fire icon -->
               <g transform='translate(247.5, 19.5)'>
                   <path d='M -12 -0.5 L 15 -0.5 L 15 23.5 L -12 23.5 L -12 -0.5 Z' fill='none'/>
-                  <path d='M 1.5 0.67 C 1.5 0.67 2.24 3.32 2.24 5.47 C 2.24 7.53 0.89 9.2 -1.17 9.2 C -3.23 9.2 -4.79 7.53 -4.79 5.47 L -4.76 5.11 C -6.78 7.51 -8 10.62 -8 13.99 C -8 18.41 -4.42 22 0 22 C 4.42 22 8 18.41 8 13.99 C 8 8.6 5.41 3.79 1.5 0.67 Z M -0.29 19 C -2.07 19 -3.51 17.6 -3.51 15.86 C -3.51 14.24 -2.46 13.1 -0.7 12.74 C 1.07 12.38 2.9 11.53 3.92 10.16 C 4.31 11.45 4.51 12.81 4.51 14.2 C 4.51 16.85 2.36 19 -0.29 19 Z' fill='#FE428E'/>
+                  <path d='M 1.5 0.67 C 1.5 0.67 2.24 3.32 2.24 5.47 C 2.24 7.53 0.89 9.2 -1.17 9.2 C -3.23 9.2 -4.79 7.53 -4.79 5.47 L -4.76 5.11 C -6.78 7.51 -8 10.62 -8 13.99 C -8 18.41 -4.42 22 0 22 C 4.42 22 8 18.41 8 13.99 C 8 8.6 5.41 3.79 1.5 0.67 Z M -0.29 19 C -2.07 19 -3.51 17.6 -3.51 15.86 C -3.51 14.24 -2.46 13.1 -0.7 12.74 C 1.07 12.38 2.9 11.53 3.92 10.16 C 4.31 11.45 4.51 12.81 4.51 14.2 C 4.51 16.85 2.36 19 -0.29 19 Z' fill='{t['accent']}'/>
               </g>
               <!-- Current Streak number -->
               <g transform='translate(247.5, 48)'>
-                  <text x='0' y='32' text-anchor='middle' fill='#F8D847' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
+                  <text x='0' y='32' text-anchor='middle' fill='{t['streak']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
                       {current_streak}
                   </text>
               </g>
 
               <!-- Longest Streak -->
               <g transform='translate(412.5, 48)'>
-                  <text x='0' y='32' text-anchor='middle' fill='#FE428E' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
+                  <text x='0' y='32' text-anchor='middle' fill='{t['accent']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
                       {longest_streak}
                   </text>
               </g>
               <g transform='translate(412.5, 84)'>
-                  <text x='0' y='32' text-anchor='middle' fill='#FE428E' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='14'>
+                  <text x='0' y='32' text-anchor='middle' fill='{t['accent']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='14'>
                       Longest Streak
                   </text>
               </g>
               <g transform='translate(412.5, 114)'>
-                  <text x='0' y='32' text-anchor='middle' fill='#A9FEF7' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
+                  <text x='0' y='32' text-anchor='middle' fill='{t['date']}' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='400' font-size='12'>
                       {longest_streak_date}
                   </text>
               </g>
@@ -733,6 +810,9 @@ jobs:
           </g>
           </svg>
           """
+
+          svg_streak = render_streak_svg(STREAK_THEMES["dark"])
+          svg_streak_light = render_streak_svg(STREAK_THEMES["light"])
 
           # =============================
           # WRITE ALL SVGs
@@ -743,11 +823,20 @@ jobs:
           with open(OUTPUT_STATS, "w", encoding="utf-8") as f:
               f.write(svg_stats)
 
+          with open(OUTPUT_STATS_LIGHT, "w", encoding="utf-8") as f:
+              f.write(svg_stats_light)
+
           with open(OUTPUT_PROFILE, "w", encoding="utf-8") as f:
               f.write(svg_profile)
 
+          with open(OUTPUT_PROFILE_LIGHT, "w", encoding="utf-8") as f:
+              f.write(svg_profile_light)
+
           with open(OUTPUT_STREAK, "w", encoding="utf-8") as f:
               f.write(svg_streak)
+
+          with open(OUTPUT_STREAK_LIGHT, "w", encoding="utf-8") as f:
+              f.write(svg_streak_light)
 
           print("GitHub statistics updated:")
           print("Commits:", commits)
@@ -771,6 +860,7 @@ jobs:
 
           USERNAME = "Vatsal220706"
           OUTPUT_LANGS = "assets/top-langs.svg"
+          OUTPUT_LANGS_LIGHT = "assets/top-langs-light.svg"
 
           headers = {
               "Accept": "application/vnd.github+json",
@@ -831,27 +921,48 @@ jobs:
               bar_segs += f'<rect x="{bar_x + off:.2f}" y="50" width="{sw}" height="10" fill="{col}"/>'
               off += sw
 
-          legend = ""
-          for i, (lang, bc) in enumerate(sorted_langs):
-              pct = bc / total_bytes * 100
-              col = lang_colors.get(lang, def_colors[i % len(def_colors)])
-              y = 80 + i * 28
-              legend += (
-                  f'<circle cx="{bar_x+6}" cy="{y+6}" r="6" fill="{col}"/>'
-                  f'<text x="{bar_x+18}" y="{y+11}" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="#EDEDED">{lang}</text>'
-                  f'<text x="{card_w-10}" y="{y+11}" text-anchor="end" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="#A0A0A0">{pct:.1f}%</text>'
-              )
+          LANGS_THEMES = {
+              "dark": {
+                  "bg": "#161B22",
+                  "border": "#30363D",
+                  "title": "#EDEDED",
+                  "lang": "#EDEDED",
+                  "pct": "#A0A0A0",
+              },
+              "light": {
+                  "bg": "#FFFFFF",
+                  "border": "#D0D7DE",
+                  "title": "#1F2328",
+                  "lang": "#1F2328",
+                  "pct": "#57606A",
+              },
+          }
 
-          svg = (
-              f'<svg xmlns="http://www.w3.org/2000/svg" width="{card_w}" height="{card_h}" viewBox="0 0 {card_w} {card_h}">'
-              f'<rect width="{card_w}" height="{card_h}" rx="12" ry="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>'
-              f'<text x="20" y="30" font-family="Segoe UI,Ubuntu,sans-serif" font-size="16" font-weight="700" fill="#EDEDED">Most Used Languages</text>'
-              f'{bar_segs}{legend}</svg>'
-          )
+          def render_langs_svg(t):
+              legend = ""
+              for i, (lang, bc) in enumerate(sorted_langs):
+                  pct = bc / total_bytes * 100
+                  col = lang_colors.get(lang, def_colors[i % len(def_colors)])
+                  y = 80 + i * 28
+                  legend += (
+                      f'<circle cx="{bar_x+6}" cy="{y+6}" r="6" fill="{col}"/>'
+                      f'<text x="{bar_x+18}" y="{y+11}" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="{t["lang"]}">{lang}</text>'
+                      f'<text x="{card_w-10}" y="{y+11}" text-anchor="end" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="{t["pct"]}">{pct:.1f}%</text>'
+                  )
+
+              return (
+                  f'<svg xmlns="http://www.w3.org/2000/svg" width="{card_w}" height="{card_h}" viewBox="0 0 {card_w} {card_h}">'
+                  f'<rect width="{card_w}" height="{card_h}" rx="12" ry="12" fill="{t["bg"]}" stroke="{t["border"]}" stroke-width="1"/>'
+                  f'<text x="20" y="30" font-family="Segoe UI,Ubuntu,sans-serif" font-size="16" font-weight="700" fill="{t["title"]}">Most Used Languages</text>'
+                  f'{bar_segs}{legend}</svg>'
+              )
 
           os.makedirs("assets", exist_ok=True)
           with open(OUTPUT_LANGS, "w", encoding="utf-8") as f:
-              f.write(svg)
+              f.write(render_langs_svg(LANGS_THEMES["dark"]))
+
+          with open(OUTPUT_LANGS_LIGHT, "w", encoding="utf-8") as f:
+              f.write(render_langs_svg(LANGS_THEMES["light"]))
 
           print("Top languages:", [l for l, _ in sorted_langs])
           PY2
@@ -860,7 +971,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/github-stats.svg assets/profile-details.svg assets/streak-stats.svg assets/top-langs.svg
+          git add assets/github-stats.svg assets/github-stats-light.svg assets/profile-details.svg assets/profile-details-light.svg assets/streak-stats.svg assets/streak-stats-light.svg assets/top-langs.svg assets/top-langs-light.svg
 
           if git diff --cached --quiet; then
             echo "No changes to GitHub statistics."
