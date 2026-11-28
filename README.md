@@ -87,27 +87,27 @@ I'm a **3rd-year B.Tech Computer Science Engineering student** and a **Frontend 
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-details.svg?v=8" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/profile-details-light.svg?v=8" />
-    <img src="./assets/profile-details.svg?v=8" alt="Vatsal's GitHub Profile Summary" width="64%" />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-details.svg?v=9" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile-details-light.svg?v=9" />
+    <img src="./assets/profile-details.svg?v=9" alt="Vatsal's GitHub Profile Summary" width="64%" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/top-langs.svg?v=8" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/top-langs-light.svg?v=8" />
-    <img src="./assets/top-langs.svg?v=8" alt="Most Used Languages" width="33%" />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/top-langs.svg?v=9" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/top-langs-light.svg?v=9" />
+    <img src="./assets/top-langs.svg?v=9" alt="Most Used Languages" width="33%" />
   </picture>
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/github-stats.svg?v=8" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/github-stats-light.svg?v=8" />
-    <img src="./assets/github-stats.svg?v=8" width="48%" alt="GitHub Statistics" />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/github-stats.svg?v=9" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/github-stats-light.svg?v=9" />
+    <img src="./assets/github-stats.svg?v=9" width="48%" alt="GitHub Statistics" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/streak-stats.svg?v=8" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/streak-stats-light.svg?v=8" />
-    <img src="./assets/streak-stats.svg?v=8" width="48%" alt="GitHub Streak" />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/streak-stats.svg?v=9" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/streak-stats-light.svg?v=9" />
+    <img src="./assets/streak-stats.svg?v=9" width="48%" alt="GitHub Streak" />
   </picture>
 </p>
 
