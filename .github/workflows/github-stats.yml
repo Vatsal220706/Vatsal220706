@@ -293,9 +293,9 @@ jobs:
           ]
 
           colors = [
-              "#3B82F6",
-              "#8B5CF6",
               "#22C55E",
+              "#8B5CF6",
+              "#3B82F6",
               "#F59E0B",
               "#EC4899"
           ]
@@ -442,18 +442,31 @@ jobs:
                       />
                   </linearGradient>
 
+                  <linearGradient
+                      id="border-grad"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                  >
+                      <stop offset="0%" stop-color="#38BDF8" />
+                      <stop offset="50%" stop-color="#3B82F6" />
+                      <stop offset="100%" stop-color="#1D4ED8" />
+                  </linearGradient>
+
               </defs>
 
               <!-- CARD -->
 
               <rect
-                  x="1"
-                  y="1"
-                  width="698"
-                  height="318"
+                  x="1.5"
+                  y="1.5"
+                  width="697"
+                  height="317"
                   rx="18"
                   fill="url(#background)"
-                  stroke="{t['border']}"
+                  stroke="url(#border-grad)"
+                  stroke-width="2.5"
               />
 
               <!-- TITLE -->
@@ -637,7 +650,14 @@ jobs:
               """
 
               return f"""<svg xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
-          <rect x="1" y="1" rx="5" ry="5" height="99%" width="99.7%" stroke="{t['border']}" stroke-width="1" fill="{t['bg']}"/>
+          <defs>
+              <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38BDF8"/>
+                  <stop offset="50%" stop-color="#3B82F6"/>
+                  <stop offset="100%" stop-color="#1D4ED8"/>
+              </linearGradient>
+          </defs>
+          <rect x="1.5" y="1.5" rx="8" ry="8" height="197" width="697" stroke="url(#border-grad)" stroke-width="2.5" fill="{t['bg']}"/>
 
           <!-- Title -->
           <text x="30" y="40" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif" font-size="22" fill="{t['title']}" font-weight="bold">{USERNAME}</text>
@@ -739,12 +759,17 @@ jobs:
               return f"""<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
                   viewBox='0 0 495 195' width='495px' height='195px'>
           <defs>
+              <linearGradient id='border-grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+                  <stop offset='0%' stop-color='#38BDF8'/>
+                  <stop offset='50%' stop-color='#3B82F6'/>
+                  <stop offset='100%' stop-color='#1D4ED8'/>
+              </linearGradient>
               <clipPath id='outer_rectangle'>
-                  <rect width='495' height='195' rx='4.5'/>
+                  <rect width='495' height='195' rx='8'/>
               </clipPath>
           </defs>
           <g clip-path='url(#outer_rectangle)'>
-              <rect fill='{t['bg']}' stroke='{t['border']}' stroke-width='1' rx='4.5' x='0.5' y='0.5' width='494' height='194'/>
+              <rect fill='{t['bg']}' stroke='url(#border-grad)' stroke-width='2.5' rx='8' x='1.5' y='1.5' width='492' height='192'/>
               <line x1='165' y1='28' x2='165' y2='170' stroke-width='1' stroke='{t['divider']}'/>
               <line x1='330' y1='28' x2='330' y2='170' stroke-width='1' stroke='{t['divider']}'/>
 
@@ -952,7 +977,10 @@ jobs:
 
               return (
                   f'<svg xmlns="http://www.w3.org/2000/svg" width="{card_w}" height="{card_h}" viewBox="0 0 {card_w} {card_h}">'
-                  f'<rect width="{card_w}" height="{card_h}" rx="12" ry="12" fill="{t["bg"]}" stroke="{t["border"]}" stroke-width="1"/>'
+                  f'<defs><linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">'
+                  f'<stop offset="0%" stop-color="#38BDF8"/><stop offset="50%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#1D4ED8"/>'
+                  f'</linearGradient></defs>'
+                  f'<rect x="1.5" y="1.5" width="{card_w - 3}" height="{card_h - 3}" rx="12" ry="12" fill="{t["bg"]}" stroke="url(#border-grad)" stroke-width="2.5"/>'
                   f'<text x="20" y="30" font-family="Segoe UI,Ubuntu,sans-serif" font-size="16" font-weight="700" fill="{t["title"]}">Most Used Languages</text>'
                   f'{bar_segs}{legend}</svg>'
               )
