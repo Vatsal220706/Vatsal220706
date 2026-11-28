@@ -347,6 +347,24 @@ jobs:
 
           donut = "".join(circles)
 
+          def render_border_shade(w, h, rx):
+              layers = [
+                  (1.5, 2.5, 1.00),
+                  (3.5, 3.0, 0.35),
+                  (6.0, 4.0, 0.16),
+                  (9.5, 5.0, 0.07),
+                  (13.5, 5.0, 0.025),
+              ]
+              rects = []
+              for inset, sw, op in layers:
+                  r = max(1, rx - (inset - 1.5))
+                  rects.append(
+                      f'<rect x="{inset}" y="{inset}" width="{w - 2 * inset}" height="{h - 2 * inset}" '
+                      f'rx="{r}" ry="{r}" fill="none" stroke="url(#border-grad)" '
+                      f'stroke-width="{sw}" stroke-opacity="{op}"/>'
+                  )
+              return "\n              ".join(rects)
+
           STATS_THEMES = {
               "dark": {
                   "bg_start": "#0D1117",
@@ -465,9 +483,8 @@ jobs:
                   height="317"
                   rx="18"
                   fill="url(#background)"
-                  stroke="url(#border-grad)"
-                  stroke-width="2.5"
               />
+              {render_border_shade(700, 320, 18)}
 
               <!-- TITLE -->
 
@@ -657,7 +674,8 @@ jobs:
                   <stop offset="100%" stop-color="#1D4ED8"/>
               </linearGradient>
           </defs>
-          <rect x="1.5" y="1.5" rx="8" ry="8" height="197" width="697" stroke="url(#border-grad)" stroke-width="2.5" fill="{t['bg']}"/>
+          <rect x="1.5" y="1.5" rx="8" ry="8" height="197" width="697" fill="{t['bg']}"/>
+          {render_border_shade(700, 200, 8)}
 
           <!-- Title -->
           <text x="30" y="40" font-family="Segoe UI, Ubuntu, Helvetica Neue, sans-serif" font-size="22" fill="{t['title']}" font-weight="bold">{USERNAME}</text>
@@ -769,7 +787,8 @@ jobs:
               </clipPath>
           </defs>
           <g clip-path='url(#outer_rectangle)'>
-              <rect fill='{t['bg']}' stroke='url(#border-grad)' stroke-width='2.5' rx='8' x='1.5' y='1.5' width='492' height='192'/>
+              <rect fill='{t['bg']}' rx='8' x='1.5' y='1.5' width='492' height='192'/>
+              {render_border_shade(495, 195, 8)}
               <line x1='165' y1='28' x2='165' y2='170' stroke-width='1' stroke='{t['divider']}'/>
               <line x1='330' y1='28' x2='330' y2='170' stroke-width='1' stroke='{t['divider']}'/>
 
@@ -975,12 +994,21 @@ jobs:
                       f'<text x="{card_w-10}" y="{y+11}" text-anchor="end" font-family="Segoe UI,Ubuntu,sans-serif" font-size="13" fill="{t["pct"]}">{pct:.1f}%</text>'
                   )
 
+              shade = ""
+              for inset, sw, op in [(1.5, 2.5, 1.0), (3.5, 3.0, 0.35), (6.0, 4.0, 0.16), (9.5, 5.0, 0.07), (13.5, 5.0, 0.025)]:
+                  r = max(1, 12 - (inset - 1.5))
+                  shade += (
+                      f'<rect x="{inset}" y="{inset}" width="{card_w - 2 * inset}" height="{card_h - 2 * inset}" '
+                      f'rx="{r}" ry="{r}" fill="none" stroke="url(#border-grad)" stroke-width="{sw}" stroke-opacity="{op}"/>'
+                  )
+
               return (
                   f'<svg xmlns="http://www.w3.org/2000/svg" width="{card_w}" height="{card_h}" viewBox="0 0 {card_w} {card_h}">'
                   f'<defs><linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">'
                   f'<stop offset="0%" stop-color="#38BDF8"/><stop offset="50%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#1D4ED8"/>'
                   f'</linearGradient></defs>'
-                  f'<rect x="1.5" y="1.5" width="{card_w - 3}" height="{card_h - 3}" rx="12" ry="12" fill="{t["bg"]}" stroke="url(#border-grad)" stroke-width="2.5"/>'
+                  f'<rect x="1.5" y="1.5" width="{card_w - 3}" height="{card_h - 3}" rx="12" ry="12" fill="{t["bg"]}"/>'
+                  f'{shade}'
                   f'<text x="20" y="30" font-family="Segoe UI,Ubuntu,sans-serif" font-size="16" font-weight="700" fill="{t["title"]}">Most Used Languages</text>'
                   f'{bar_segs}{legend}</svg>'
               )
