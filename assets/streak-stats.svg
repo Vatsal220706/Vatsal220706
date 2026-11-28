@@ -11,14 +11,19 @@
     </clipPath>
 </defs>
 <g clip-path='url(#outer_rectangle)'>
-    <rect fill='#141321' stroke='url(#border-grad)' stroke-width='2.5' rx='8' x='1.5' y='1.5' width='492' height='192'/>
+    <rect fill='#141321' rx='8' x='1.5' y='1.5' width='492' height='192'/>
+    <rect x="1.5" y="1.5" width="492.0" height="192.0" rx="8.0" ry="8.0" fill="none" stroke="url(#border-grad)" stroke-width="2.5" stroke-opacity="1.0"/>
+              <rect x="3.5" y="3.5" width="488.0" height="188.0" rx="6.0" ry="6.0" fill="none" stroke="url(#border-grad)" stroke-width="3.0" stroke-opacity="0.35"/>
+              <rect x="6.0" y="6.0" width="483.0" height="183.0" rx="3.5" ry="3.5" fill="none" stroke="url(#border-grad)" stroke-width="4.0" stroke-opacity="0.16"/>
+              <rect x="9.5" y="9.5" width="476.0" height="176.0" rx="1" ry="1" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.07"/>
+              <rect x="13.5" y="13.5" width="468.0" height="168.0" rx="1" ry="1" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.025"/>
     <line x1='165' y1='28' x2='165' y2='170' stroke-width='1' stroke='#E4E2E2'/>
     <line x1='330' y1='28' x2='330' y2='170' stroke-width='1' stroke='#E4E2E2'/>
 
     <!-- Total Contributions -->
     <g transform='translate(82.5, 48)'>
         <text x='0' y='32' text-anchor='middle' fill='#FE428E' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='700' font-size='28'>
-            50
+            51
         </text>
     </g>
     <g transform='translate(82.5, 84)'>

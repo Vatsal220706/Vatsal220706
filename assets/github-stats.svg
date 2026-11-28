@@ -48,9 +48,12 @@
         height="317"
         rx="18"
         fill="url(#background)"
-        stroke="url(#border-grad)"
-        stroke-width="2.5"
     />
+    <rect x="1.5" y="1.5" width="697.0" height="317.0" rx="18.0" ry="18.0" fill="none" stroke="url(#border-grad)" stroke-width="2.5" stroke-opacity="1.0"/>
+              <rect x="3.5" y="3.5" width="693.0" height="313.0" rx="16.0" ry="16.0" fill="none" stroke="url(#border-grad)" stroke-width="3.0" stroke-opacity="0.35"/>
+              <rect x="6.0" y="6.0" width="688.0" height="308.0" rx="13.5" ry="13.5" fill="none" stroke="url(#border-grad)" stroke-width="4.0" stroke-opacity="0.16"/>
+              <rect x="9.5" y="9.5" width="681.0" height="301.0" rx="10.0" ry="10.0" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.07"/>
+              <rect x="13.5" y="13.5" width="673.0" height="293.0" rx="6.0" ry="6.0" fill="none" stroke="url(#border-grad)" stroke-width="5.0" stroke-opacity="0.025"/>
 
     <!-- TITLE -->
 
@@ -75,7 +78,7 @@
         fill="none"
         stroke="#22C55E"
         stroke-width="25"
-        stroke-dasharray="497.13 578.05"
+        stroke-dasharray="498.71 578.05"
         stroke-dashoffset="-0.00"
         transform="rotate(-90 145 150)"
     />
@@ -87,8 +90,8 @@
         fill="none"
         stroke="#8B5CF6"
         stroke-width="25"
-        stroke-dasharray="46.24 578.05"
-        stroke-dashoffset="-497.13"
+        stroke-dasharray="45.34 578.05"
+        stroke-dashoffset="-498.71"
         transform="rotate(-90 145 150)"
     />
     
@@ -100,7 +103,7 @@
         stroke="#3B82F6"
         stroke-width="25"
         stroke-dasharray="0.00 578.05"
-        stroke-dashoffset="-543.37"
+        stroke-dashoffset="-544.05"
         transform="rotate(-90 145 150)"
     />
     
@@ -112,7 +115,7 @@
         stroke="#F59E0B"
         stroke-width="25"
         stroke-dasharray="0.00 578.05"
-        stroke-dashoffset="-543.37"
+        stroke-dashoffset="-544.05"
         transform="rotate(-90 145 150)"
     />
     
@@ -123,8 +126,8 @@
         fill="none"
         stroke="#EC4899"
         stroke-width="25"
-        stroke-dasharray="34.68 578.05"
-        stroke-dashoffset="-543.37"
+        stroke-dasharray="34.00 578.05"
+        stroke-dashoffset="-544.05"
         transform="rotate(-90 145 150)"
     />
     
@@ -147,7 +150,7 @@
         font-weight="bold"
         fill="#FFFFFF"
     >
-        50
+        51
     </text>
 
     <text
@@ -190,7 +193,7 @@
         font-weight="bold"
         fill="#FFFFFF"
     >
-        43
+        44
     </text>
     
     <circle
